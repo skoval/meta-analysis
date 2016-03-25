@@ -1,7 +1,8 @@
-title            : Template R DataCamp Course
-author_field     : skoval
-description      : This is an automatically generated demo course which will help you on your way to create an awesome DataCamp course.
-author_bio       : skoval is an awesome DataCamp course creator.<br>You can tell something about yourself <strong>here</strong>.
-university       : DataCamp
+title            : Meta-Analysis with R
+author_field     : Stephanie Kovalchik
+description      : Meta-analysis is the process of summarizing scientific evidence from multiple studies. The purpose of this course is to show you how to conduct and present meta-analysis using R.
+author_bio       : Stephanie Kovalchik is a statistician whose current research focus is in sports science.
+university       : Victoria University and Tennis Australia
+programming_lanugage: r
 difficulty_level : 2
-time_needed      : 1 hour
+time_needed      : 8 hours
