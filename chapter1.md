@@ -3,7 +3,7 @@ title       : Introduction to Meta-Analysis
 description : Insert the chapter description here
 
 
----
+--- type:NormalExercise xp:0 skills:0
 
 ## Generic Slide
 
