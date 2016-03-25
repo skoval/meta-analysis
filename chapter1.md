@@ -2,7 +2,7 @@
 title       : Introduction to Meta-Analysis
 description : Insert the chapter description here
 attachments :
-  slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
+  slides_link : http://skoval.github.io/meta-analysis-slides/chapter1.html
 
 --- type:VideoExercise lang:r xp:50 skills:1
 ## Analyze movie ratings
