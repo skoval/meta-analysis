@@ -4,8 +4,9 @@ description : Insert the chapter description here
 
 
 --- type:NormalExercise xp:0 skills:0
-
 ## Generic Slide
+
+*** =instructions
 
 [Chapter Slides](http://skoval.github.io/meta-analysis-slides/chapter1.html)
 
