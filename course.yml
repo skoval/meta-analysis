@@ -1,7 +1,7 @@
 title            : Meta-Analysis with R
 author_field     : Stephanie Kovalchik
 description      : Meta-analysis is the process of summarizing scientific evidence from multiple studies. The purpose of this course is to show you how to conduct and present meta-analysis using R.
-author_bio       : Stephanie Kovalchik is a statistician whose current research focus is in sports science.
+author_bio       : Stephanie Kovalchik is a statistician whose current research focuses on sports analytics.
 university       : Victoria University and Tennis Australia
 programming_lanugage: r
 difficulty_level : 2

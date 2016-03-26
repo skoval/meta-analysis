@@ -2,7 +2,7 @@
 title       : Introduction to Meta-Analysis
 description : Exercises to accompany the first lecture for `Meta-Analysis with R'
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:0
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1
 ## Invention of Meta-Analysis
 
 Which one of the following best describes the situation that prompted the development of meta-analysis? 
@@ -24,7 +24,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:0
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1
 ## Meta-Analysis Versus Literature Review
 
 Glass's criticism of Han Eysenck's review points out a number of ways that meta-analysis differs from a literature review. Which of the following is one of those differences?
@@ -95,3 +95,4 @@ test_object("positive")
 test_error()
 success_msg("Good work!")
 ```
+---
