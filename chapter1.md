@@ -1,156 +1,97 @@
 ---
 title       : Introduction to Meta-Analysis
-description : Insert the chapter description here
+description : Exercises to accompany the first lecture for `Meta-Analysis with R'
 
+--- type:MultipleChoiceExercise lang:r xp:50 skills:0
+## Invention of Meta-Analysis
 
---- type:NormalExercise xp:0 skills:0
-## Generic Slide
-
-*** =instructions
-
-[Chapter Slides](http://skoval.github.io/meta-analysis-slides/chapter1.html)
-
-
---- type:VideoExercise lang:r xp:50 skills:1
-## Analyze movie ratings
-
-*** =video_link
-//player.vimeo.com/video/154783078
-
---- type:MultipleChoiceExercise lang:r xp:50 skills:1
-## A really bad movie
-
-Have a look at the plot that showed up in the viewer to the right. Which type of movie has the worst rating assigned to it?
+Which one of the following best describes the situation that prompted the development of meta-analysis? 
 
 *** =instructions
-- Adventure
-- Action
-- Animation
-- Comedy
+- To prove the harmful effects of Avandia
+- To settle a scientific dispute
+- To support claims about climate change
 
-*** =hint
-Have a look at the plot. Which color does the point with the lowest rating have?
-
-*** =pre_exercise_code
-```{r}
-# The pre exercise code runs code to initialize the user's workspace. You can use it for several things:
-
-# 1. Preload a dataset. The code below will read the csv that is stored at the URL's location.
-# The movies variable will be available in the user's console.
-movies <- read.csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
-
-# 2. Pre-load packages, so that users don't have to do this manually.
-library(ggplot2)
-
-# 3. Create a plot in the viewer, that students can check out while reading the exercise
-ggplot(movies, aes(x = runtime, y = rating, col = genre)) + geom_point()
-```
 
 *** =sct
 ```{r}
-# The sct section defines the Submission Correctness Tests (SCTs) used to
-# evaluate the student's response. All functions used here are defined in the 
-# testwhat R package
 
-msg_bad <- "That is not correct!"
-msg_success <- "Exactly! There seems to be a very bad action movie in the dataset."
+msg1 <- "Try again. Meta-analysis was involved with the takedown of Avandia but it wasn't the reason for its invention."
+msg2 <- "Correct! Gene Glass invented meta-analysis to settle a dispute over the effectiveness of pyshcotherapy."
+msg3 <- "Try again. This debate got heated up long after meta-analysis came on the scene."
 
-# Use test_mc() to grade multiple choice exercises. 
-# Pass the correct option (Action, option 2 in the instructions) to correct.
-# Pass the feedback messages, both positive and negative, to feedback_msgs in the appropriate order.
-test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad)) 
+test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1
-## More movies
 
-In the previous exercise, you saw a dataset about movies. In this exercise, we'll have a look at yet another dataset about movies!
+--- type:MultipleChoiceExercise lang:r xp:50 skills:0
+## Meta-Analysis Versus Literature Review
 
-A dataset with a selection of movies, `movie_selection`, is available in the workspace.
+Glass's criticism of Han Eysenck's review points out a number of ways that meta-analysis differs from a literature review. Which of the following is one of those differences?
+
 
 *** =instructions
-- Check out the structure of `movie_selection`.
-- Select movies with a rating of 5 or higher. Assign the result to `good_movies`.
-- Use `plot()` to  plot `good_movies$Run` on the x-axis, `good_movies$Rating` on the y-axis and set `col` to `good_movies$Genre`.
+- Inclusion of multiple scientific studies
+_ Attempts to summarize past evidence on a scientific question
+- Includes a statistical summary of findings
 
-*** =hint
-- Use `str()` for the first instruction.
-- For the second instruction, you should use `...[movie_selection$Rating >= 5, ]`.
-- For the plot, use `plot(x = ..., y = ..., col = ...)`. 
+
+*** =sct
+```{r}
+
+msg1 <- "Try again. Both literature reviews and meta-analyses include scientific studies."
+msg2 <- "Nope. Both review methods summarize evidence. Literature reviews use a qualitative summary and meta-analysis a quantitative summary."
+msg3 <- "Correct. Meta-analysis is distinct in its inclusion of a numerical summary of evidence."
+
+test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3)) 
+```
+
+
+--- type:NormalExercise lang:r xp:100 skills:1
+## Vote Counting
+
+To understand the concerns with vote counting, you will apply the method yourself. 
+
+A dataset with the p-values for 10 studies in a meta-analysis is included in the workspace, and is named `votes`.
+
+*** =instructions
+- Type `votes' in the command line to see the p-values.
+- Determine how many positive studies there are based on a 0.05 criterion.
+- What would vote counting conclude about the tested hypothesis?
+- Create the object `positive' and assign it the number of positive studies.
+
 
 *** =pre_exercise_code
 ```{r}
-# Pre-load a package in the workspace
-library(MindOnStats)
-
-# You can prepare the data before the student starts:
-data(Movies)
-movie_selection <- Movies[Movies$Genre %in% c("action", "animated", "comedy"),c("Genre", "Rating", "Run")]
-
-# You can also clean up data so that it's not available in the student's workspace anymore:
-rm(Movies)
+votes <- structure(list(pvalues = c(0.259529271489009, 0.0586773202987388, 
+0.236969744972885, 0.0285978539614007, 0.209024939755909, 0.208146497933194, 
+0.00168275807518512, 0.168483346374705, 0.214195363945328, 0.192846733960323
+)), .Names = "pvalues", row.names = c(NA, -10L), class = "data.frame")
 ```
 
 *** =sample_code
 ```{r}
-# movie_selection is available in your workspace
+# votes is available in your workspace
 
-# Check out the structure of movie_selection
-
-
-# Select movies that have a rating of 5 or higher: good_movies
-
-
-# Plot Run (i.e. run time) on the x axis, Rating on the y axis, and set the color using Genre
-
+# create the object positive to summarize what you found
 ```
 
 *** =solution
 ```{r}
-# movie_selection is available in your workspace
+# votes is available in your workspace
+votes
 
-# Check out the structure of movie_selection
-str(movie_selection)
+table(votes$pvalues < 0.05) # Positive studies
 
-# Select movies that have a rating of 5 or higher: good_movies
-good_movies <- movie_selection[movie_selection$Rating >= 5, ]
-
-# Plot Run (i.e. run time) on the x axis, Rating on the y axis, and set the color using Genre
-plot(good_movies$Run, good_movies$Rating, col = good_movies$Genre)
+positive <- 2 # Only 2 of the 10 were positive studies
 ```
 
 *** =sct
 ```{r}
-# The sct section defines the Submission Correctness Tests (SCTs) used to
-# evaluate the student's response. All functions used here are defined in the 
-# testwhat R package. Documentation can also be found at github.com/datacamp/testwhat/wiki
+test_function("assign", args = "x",
+              not_called_msg = "You didn't summarize your findings")
 
-# Test whether the function str is called with the correct argument, object
-# If it is not called, print something informative
-# If it is called, but called incorrectly, print something else
-test_function("str", args = "object",
-              not_called_msg = "You didn't call `str()`!",
-              incorrect_msg = "You didn't call `str(object = ...)` with the correct argument, `object`.")
-
-# Test the object, good_movies
-# Notice that we didn't define any feedback here, this will cause automatically 
-# generated feedback to be given to the student in case of an incorrect submission
-test_object("good_movies")
-
-# Test whether the student correctly used plot()
-# Again, we use the automatically generated feedback here
-test_function("plot", args = "x")
-test_function("plot", args = "y")
-test_function("plot", args = "col")
-
-# Alternativeley, you can use test_function() like this
-# test_function("plot", args = c("x", "y", "col"))
-
-# It's always smart to include the following line of code at the end of your SCTs
-# It will check whether executing the student's code resulted in an error, 
-# and if so, will cause the exercise to fail
+test_object("positive")
 test_error()
-
-# Final message the student will see upon completing the exercise
 success_msg("Good work!")
 ```
