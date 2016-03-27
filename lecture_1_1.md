@@ -1,8 +1,8 @@
 ---
 title       : Introduction to Meta-Analysis
-description : Exercises to accompany the first lecture for `Meta-Analysis with R'
+description : Exercises to accompany the Lecture 1.1 for `Meta-Analysis with R'
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
 ## Invention of Meta-Analysis
 
 Which one of the following best describes the situation that prompted the development of meta-analysis? 
@@ -24,7 +24,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
 ## Meta-Analysis Versus Literature Review
 
 Glass's criticism of Han Eysenck's review points out a number of ways that meta-analysis differs from a literature review. Which of the following is one of those differences?
@@ -47,7 +47,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:1
+--- type:NormalExercise lang:r xp:100 skills:3
 ## Vote Counting
 
 To understand the concerns with vote counting, you will apply the method yourself. 
@@ -95,7 +95,7 @@ test_object("positive")
 test_error()
 success_msg("Good work!")
 ```
---- type:MultipleChoiceExercise lang:r xp:50 skills:1
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
 ## Reasons for Conducting Meta-Analysis
 
 Which one of the following is a reason to conduct a meta-analysis?
@@ -119,7 +119,7 @@ test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:100 skills:1
+--- type:MultipleChoiceExercise lang:r xp:100 skills:5
 ## Identifying a Meta-Analysis (1)
 
 Read the following study's objective and methods and determine whether this study is an example of a meta-analysis?
@@ -141,7 +141,7 @@ msg2 <- "Try again. Recall the definition of a meta-analysis. Does the study fit
 test_mc(correct = 1, feedback_msgs = c(msg1, msg2)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:100 skills:1
+--- type:MultipleChoiceExercise lang:r xp:100 skills:5
 ## Identifying a Meta-Analysis (2)
 
 Read the following study's objective and methods and determine whether this study is an example of a meta-analysis?
