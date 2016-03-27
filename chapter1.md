@@ -32,7 +32,7 @@ Glass's criticism of Han Eysenck's review points out a number of ways that meta-
 
 *** =instructions
 - Inclusion of multiple scientific studies
-_ Attempts to summarize past evidence on a scientific question
+- Attempts to summarize past evidence on a scientific question
 - Includes a statistical summary of findings
 
 
@@ -95,4 +95,71 @@ test_object("positive")
 test_error()
 success_msg("Good work!")
 ```
----
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1
+## Reasons for Conducting Meta-Analysis
+
+Which one of the following is a reason to conduct a meta-analysis?
+
+*** =instructions
+
+- To obtain a more precise summary of tests of the same hypothesis
+- To prove a point
+- Because a literature review isn't taken as seriously
+
+
+
+*** =sct
+```{r}
+
+msg1 <- "Correct! A meta-analysis should attempt to combine similar evidence in order to get a more precise estimate for the same effect."
+msg2 <- "Think again. This isn't a sufficient condition for performing a meta-analysis."
+msg3 <- "Try again. This might be true, but it doesn't mean a meta-analysis is appropriate."
+
+test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3)) 
+```
+
+
+--- type:MultipleChoiceExercise lang:r xp:100 skills:1
+## Identifying a Meta-Analysis (1)
+
+Read the following study's objective and methods and determine whether this study is an example of a meta-analysis?
+
+"OBJECTIVE: To estimate the odds and prevalence of clinically relevant depression in adults with type 1 or type 2 diabetes. METHOD: MEDLINE and PsycINFO databases and published references were used to identify studies that reported the prevalence of depression in diabetes. Prevalence was calculated as an aggregate mean weighted by the combined number of subjects in the included studies."
+
+
+*** =instructions
+- Yes
+- No
+
+
+*** =sct
+```{r}
+
+msg1 <- "That's right. Odds ratios were combined from multiple independent studies."
+msg2 <- "Try again. Recall the definition of a meta-analysis. Does the study fit that description?"
+
+test_mc(correct = 1, feedback_msgs = c(msg1, msg2)) 
+```
+
+--- type:MultipleChoiceExercise lang:r xp:100 skills:1
+## Identifying a Meta-Analysis (2)
+
+Read the following study's objective and methods and determine whether this study is an example of a meta-analysis?
+
+"OBJECTIVE: The goals our analyses were to establish the frequency and duration of delayed antifungal treatment and to evaluate the relationship between treatment delay and mortality. METHOD: We conducted a retrospective cohort study of patients with candidemia from 4 medical centers who were prescribed fluconazole. Time to initiation of fluconazole therapy was calculated by subtracting the date on which fluconazole therapy was initiated from the culture date of the first blood sample positive for yeast."
+
+
+*** =instructions
+- Yes
+- No
+
+
+*** =sct
+```{r}
+
+msg1 <- "Try again. Recall the definition of a meta-analysis. Does the study fit that description?"
+msg2 <- "That's right. Although the study uses multiple sites, it is a retrospective cohort using patient-level outcomes and not a summary of effects from multiple studies."
+
+test_mc(correct = 2, feedback_msgs = c(msg1, msg2)) 
+```
+
