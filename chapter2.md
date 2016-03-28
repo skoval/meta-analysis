@@ -15,6 +15,9 @@ What was the main point of the meta-analysis Lua and colleagues performed on the
 - The cumulative evidence showed the benefit of streptokinase years before their was scientific consensus 
 - Streptokinase had previously unrecognized harmful side effects
 
+*** =hint
+This meta-analysis was called a _cumulative_ meta-analysis.
+
 
 *** =sct
 ```{r}
@@ -38,6 +41,8 @@ The Lau et al. study is an example of a _cumulative meta-analysis_. What is uniq
 - The analysis includes multiple outcomes
 - The analysis is ordered by calendar time and is sequentially updated
 
+*** =hint
+The time of year of each study was particularly important.
 
 *** =sct
 ```{r}
@@ -61,6 +66,9 @@ What is one example where the use of meta-analysis influenced medical consensus 
 - Showing that screening mammography is ineffective
 - Showing the harmful effects of climate change
 
+*** =hint
+Recall the story of Dr. Steve Nissen and a drug for diabetes.
+
 *** =sct
 ```{r}
 
@@ -81,6 +89,9 @@ What is one of the criticisms that has made past meta-analyses of breast cancer 
 - It has mixed randomized and non-randomized studies
 - It has not included women under age 50 years
 - It has failed to report overall survival
+
+*** =hint
+This criticism concerns the quality of the study design.
 
 *** =sct
 ```{r}

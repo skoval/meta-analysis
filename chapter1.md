@@ -12,6 +12,8 @@ Which one of the following best describes the situation that prompted the develo
 - To settle a scientific dispute
 - To support claims about climate change
 
+*** =hint
+Recall Gene Glass and his interest in psychotherapy.
 
 *** =sct
 ```{r}
@@ -35,6 +37,8 @@ Glass's criticism of Han Eysenck's review points out a number of ways that meta-
 - Attempts to summarize past evidence on a scientific question
 - Includes a statistical summary of findings
 
+*** =hint
+Sometimes meta-analysis is called a _quantitative_ review.
 
 *** =sct
 ```{r}
@@ -60,6 +64,8 @@ A dataset with the p-values for 10 studies in a meta-analysis is included in the
 - What would vote counting conclude about the tested hypothesis?
 - Create the object `positive' and assign it the number of positive studies.
 
+*** =hint
+Use `sum' or `table' to count the positive studies.
 
 *** =pre_exercise_code
 ```{r}
@@ -106,7 +112,8 @@ Which one of the following is a reason to conduct a meta-analysis?
 - To prove a point
 - Because a literature review isn't taken as seriously
 
-
+*** =hint
+Recall that, by combining across multipe studies, meta-analysis is more powerful than a single study.
 
 *** =sct
 ```{r}
@@ -132,6 +139,9 @@ Read the following study's objective and methods and determine whether this stud
 - No
 
 
+*** =hint
+Recall that meta-analysis is the summary of findings from multiple separate studies.
+
 *** =sct
 ```{r}
 
@@ -153,6 +163,8 @@ Read the following study's objective and methods and determine whether this stud
 - Yes
 - No
 
+*** =hint
+Recall that meta-analysis is the summary of findings from multiple separate studies.
 
 *** =sct
 ```{r}
