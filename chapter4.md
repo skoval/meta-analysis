@@ -24,7 +24,7 @@ library(meta)
 *** =solution
 ```{r}
 # library(meta) is pre-loaded
-help(package = "funnel") # ?funnel is also okay
+help("funnel") # ?funnel is also okay
 ```
 
 *** =sct
