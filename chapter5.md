@@ -16,7 +16,6 @@ Use the `RISmed` package to search for PubMed articles on meta-analysis. How man
 Use the `title` field in the query.
 
 *** =pre_exercise_code
-
 ```{r}
 library(RISmed)
 ```
@@ -59,7 +58,6 @@ Import the first 10 records from the search of articles on meta-analysis.
 Use the `retmax` field to restrict the count of returned articles.
 
 *** =pre_exercise_code
-
 ```{r}
 library(RISmed)
 ```
@@ -99,7 +97,6 @@ Examine the journals that the articles were published in.
 Use the `Title` method.
 
 *** =pre_exercise_code
-
 ```{r}
 library(RISmed)
 
@@ -143,7 +140,6 @@ Conduct a search of journals with `diabetes` in the abstract and find the subset
 Use the `grep` function to search for matching text patterns.
 
 *** =pre_exercise_code
-
 ```{r}
 library(RISmed)
 ```
