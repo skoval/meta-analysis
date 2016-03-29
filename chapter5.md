@@ -44,7 +44,7 @@ success_msg("Good job! Head over to the next exercise")
 
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1
 ## Importing References
 
 Import the first 10 records from the search of articles on meta-analysis.
@@ -92,6 +92,7 @@ success_msg("Good job! Head over to the next exercise")
 Examine the journals that the articles were published in.
 
 *** =instructions
+- Assume that the `fetch` object of the `EUtilsGet` call is already in the workspace.
 - Save the titles as the object `journals`.
 
 *** =hint 
@@ -100,6 +101,11 @@ Use the `Title` method.
 *** =pre_exercise_code
 
 ```{r}
+library(RISmed)
+
+query <- EUtilsSummary("meta-analysis[ti]", reldate = 30, retmax = 10)
+
+fetch <- EUtilsGet(query)
 ```
 
 
@@ -123,4 +129,48 @@ test_object("journals")
 success_msg("Good job! Head over to the next exercise")
 ```
 
+--- type:NormalExercise lang:r  xp:200 skills:1
+## Analyzing Results
+
+Conduct a search of journals with `diabetes` in the abstract and find the subset of matches that are likely to include data from a randomized controlled trial.
+
+*** =instructions
+- Conduct a query for articles with `diabetes` in the abstract.
+- Restrict your search to the first 30 articles.
+- Search for studies involving a controlled trial by looking for abstracts containing `RCT` or `clinical trial`.
+- Save the index of matches as the object `trials`.
+
+*** =hint 
+Use the `grep` function to search for matching text patterns.
+
+*** =pre_exercise_code
+
+```{r}
+library(RISmed)
+```
+
+
+*** =solution
+```{r}
+query <- EUtilsSummary("diabetes[ab]", retmax = 30)
+
+fetch <- EUtilsGet(query)
+
+abstracts <- AbstractText(fetch)
+
+trials <- grep("(controlled trial|RCT)", abstracts)
+```
+
+*** =sct
+```{r}
+test_error()
+
+
+test_function("AbstractText", args = "object",
+              not_called_msg = "You should use the AbstractText method.")
+
+test_object("trials")
+
+success_msg("Good job! Head over to the next exercise")
+```
 
