@@ -1,6 +1,6 @@
 ---
 title       : Introduction to Meta-Analysis
-description : Exercises to accompany the Lecture 1.1 for `Meta-Analysis with R'
+description : Exercises to accompany Lecture 1.1 for `Meta-Analysis with R'
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:5
 ## Invention of Meta-Analysis

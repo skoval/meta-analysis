@@ -1,6 +1,6 @@
 ---
 title       : Influence and Controversy
-description : Exercises to accompany the Lecture 1.2 for `Meta-Analysis with R'
+description : Exercises to accompany Lecture 1.2 for `Meta-Analysis with R'
 
 
 

@@ -1,6 +1,6 @@
 ---
 title       : Meta-Analysis and R
-description : Exercises to accompany the Lecture 1.4 for `Meta-Analysis with R'
+description : Exercises to accompany Lecture 1.4 for `Meta-Analysis with R'
 
 
 --- type:NormalExercise lang:r  xp:100 skills:1

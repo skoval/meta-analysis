@@ -1,6 +1,6 @@
 ---
 title       : Systematic Review and Meta-Analysis
-description : Exercises to accompany the Lecture 1.3 for `Meta-Analysis with R'
+description : Exercises to accompany Lecture 1.3 for `Meta-Analysis with R'
 
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:5

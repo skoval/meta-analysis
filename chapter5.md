@@ -1,6 +1,6 @@
 ---
 title       : Reference Management in R
-description : Exercises to accompany the Lecture 2 for `Meta-Analysis with R'
+description : Exercises to accompany Lecture 2.1 for `Meta-Analysis with R'
 
 
 --- type:NormalExercise lang:r  xp:100 skills:1
