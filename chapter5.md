@@ -108,7 +108,6 @@ query <- EUtilsSummary("meta-analysis[ti]", reldate = 30, retmax = 10)
 fetch <- EUtilsGet(query)
 ```
 
-
 *** =solution
 ```{r}
 journals <- Title(fetch)
@@ -132,13 +131,13 @@ success_msg("Good job! Head over to the next exercise")
 --- type:NormalExercise lang:r  xp:200 skills:1
 ## Analyzing Results
 
-Conduct a search of journals with `diabetes` in the abstract and find the subset of matches that are likely to include data from a randomized controlled trial.
+Conduct a search of journals with `diabetes` in the abstract and find the subset of matches that are likely to focus on type 2 diabetes.
 
 *** =instructions
 - Conduct a query for articles with `diabetes` in the abstract.
 - Restrict your search to the first 30 articles.
-- Search for studies involving a controlled trial by looking for abstracts containing `RCT` or `clinical trial`.
-- Save the index of matches as the object `trials`.
+- Search for studies involving type 2 diabets by looking for abstracts containing `type 2` or `type II` in the text.
+- Save the index of matches as the object `type2`.
 
 *** =hint 
 Use the `grep` function to search for matching text patterns.
@@ -158,7 +157,7 @@ fetch <- EUtilsGet(query)
 
 abstracts <- AbstractText(fetch)
 
-trials <- grep("(controlled trial|RCT)", abstracts)
+type2 <- grep("type [2|II]", abstracts)
 ```
 
 *** =sct
@@ -169,7 +168,7 @@ test_error()
 test_function("AbstractText", args = "object",
               not_called_msg = "You should use the AbstractText method.")
 
-test_object("trials")
+test_object("type2")
 
 success_msg("Good job! Head over to the next exercise")
 ```
