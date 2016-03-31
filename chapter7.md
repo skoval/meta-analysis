@@ -4,7 +4,7 @@ description : Exercises to accompany Lecture 3 for `Meta-Analysis with R'
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:5
 
-## Choosing an Effect Size
+## Choosing an Effect Size (1)
 
 Inspect that dataset `Olkin95`. Which of the following effect sizes would _not_ be appropriate?
 
@@ -35,7 +35,7 @@ test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3, msg4))
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:5
 
-## Choosing an Effect Size
+## Choosing an Effect Size (2)
 
 Inspect that dataset `dat.senn2013`. Which of the following effect sizes would _not_ be appropriate?
 
