@@ -57,7 +57,7 @@ data(dat.senn2013)
 ```{r}
 msg1 <- "No. This would be an appropriate summary for the difference of the two groups."
 msg2 <- "Try again. This would be an appropriate summary for one of the groups."
-msg3 <- "Correct! Odds ratios are suitable effect measures for summaries of binary outcomes.""
+msg3 <- "Correct! Odds ratios are suitable effect measures for summaries of binary outcomes."
 
 test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
