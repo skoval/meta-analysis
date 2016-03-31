@@ -37,7 +37,7 @@ test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3, msg4))
 
 ## Choosing an Effect Size (2)
 
-Inspect that dataset `dat.senn2013`. Which of the following effect sizes would _not_ be appropriate?
+Inspect that dataset `dat.normand1999`. Which of the following effect sizes would _not_ be appropriate?
 
 *** =instructions
 - Mean difference
@@ -45,12 +45,12 @@ Inspect that dataset `dat.senn2013`. Which of the following effect sizes would _
 - Odds Ratio
 
 *** =hint
-Type `dat.senn2013` in the console.
+Type `dat.normand1999` in the console.
 
 *** =pre_exercise_code
 ```{r}
 library(metafor)
-data(dat.senn2013)
+data(dat.normand1999)
 ```
 
 *** =sct
@@ -178,35 +178,28 @@ success_msg("Good job! Head over to the next exercise")
 --- type:NormalExercise lang:r  xp:300 skills:5
 ## Working with Continuous Outcomes
 
-Use the `formula` argument to calculate the mean difference of lowered glucose for `rosiglitazone` versus `placebo` in the  dataset `dat.senn2013`. 
+Calculate the mean difference in length of stay using the dataset `dat.normand1999`. 
 
 *** =instructions
-- The outcome is the `mi` variable.
-- Only 2 of the treatment groups are of interest.
-- The dataset is in long format so use the `formula` argument.
-- Save your results in the object `result`
-- Limit the analysis to the following studies: Davidson (2007), Wolffenbuttel (1999), Kerenyi (2004), and Baksi (2004).
+- The outcome is the `m1i`  and `m2i` variables.
+- Save your results in the object `result`.
+
 
 *** =hint
-Make sure to subset the data to the correct treatment groups.
+Make sure to include the `sd` and `n` variables.
 
 *** =pre_exercise_code
 ```{r}
 library(metafor)
-data(dat.senn2013)
+data(dat.normand1999)
 ```
 
 *** =solution
 ```{r}
-studies <- c("Davidson (2007)", "Wolffenbuttel (1999)", "Kerenyi (2004)", "Baksi (2004)")
-
-data <- subset(dat.senn2013, treatment %in% c("rosiglitazone", "placebo") & study %in% studies)
-
-data$treatment <- factor(data$treatment )
-data$study <- factor(data$study)
-
-result <- escalc(measure = "MD", formula = mi/sdi ~ treatment | study, 
-		weights = ni, data = data)
+result <- escalc(m1i = m1i, m2i = m2i,
+		sd1 = sd1i, sd2 = sd2i,
+		n1 = n1i, n2 = n2i, 
+		measure = "MD", data = dat.normand1999)
 ```
 
 *** =sct
@@ -225,43 +218,42 @@ Calculate the standardized mean difference for the previous problem and contrast
 
 *** =instructions
 - Use the measure `SMD`.
-- Assume that the `result` and `data` objects are already available.
-- Create new data.frame with the `SMD` outcomes as `result2` and combine the two datasets for plotting. 
+- Assume that `result` is already available.
+- Create new data.frame with the `SMD` outcomes as `result2`.
+- Add the `SMD` to the `result` data.frame and name it `SMD`.
 - Use `ggplot` to contrast the two effects.
 
 *** =hint
-Make sure to use the formula argument of `escalc`.
+Make sure to create new names for each outcome type.
 
 *** =pre_exercise_code
 ```{r}
 library(metafor)
 library(ggplot2)
 
-data(dat.senn2013)
+data(dat.normand1999)
 
-studies <- c("Davidson (2007)", "Wolffenbuttel (1999)", "Kerenyi (2004)", "Baksi (2004)")
 
-data <- subset(dat.senn2013, treatment %in% c("rosiglitazone", "placebo") & study %in% studies)
+result <- escalc(m1i = m1i, m2i = m2i,
+		sd1 = sd1i, sd2 = sd2i,
+		n1 = n1i, n2 = n2i, 
+		measure = "MD", data = dat.normand1999)
 
-data$treatment <- factor(data$treatment )
-data$study <- factor(data$study)
-
-result <- escalc(measure = "MD", formula = mi/sdi ~ treatment | study, 
-		weights = ni, data = data)
 ```
 
 *** =solution
 ```{r}
-result2 <- escalc(measure = "SMD", formula = mi/sdi ~ treatment | study, 
-		weights = ni, data = data)
+result2 <- escalc(m1i = m1i, m2i = m2i,
+		sd1 = sd1i, sd2 = sd2i,
+		n1 = n1i, n2 = n2i, 
+		measure = "SMD", data = dat.normand1999)
 
-names(result)[1] <- "MD"
-names(result2)[1] <- "SMD"
+names(result)[names(result) == "yi"] <- "MD"
+names(result2)[names(result2) == "yi"] <- "SMD"
 
+result$SMD <- result2$SMD
 
-combine <- cbind(result, result2)
-
-ggplot(combine, aes(y = MD, x = SMD)) +
+ggplot(result, aes(y = MD, x = SMD)) +
 	geom_point()
 ```
 
@@ -270,7 +262,7 @@ ggplot(combine, aes(y = MD, x = SMD)) +
 test_error()
 test_function("ggplot", args = "data",
               not_called_msg = "You didn't call ggplot to compare your effects.")
-test_object("result2")
+test_object(result$SMD)           
 success_msg("Awesome! You are all done.")
 ```
 
