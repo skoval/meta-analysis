@@ -262,7 +262,6 @@ ggplot(result, aes(y = MD, x = SMD)) +
 test_error()
 test_function("ggplot", args = "data",
               not_called_msg = "You didn't call ggplot to compare your effects.")
-test_object(result$SMD)           
 success_msg("Awesome! You are all done.")
 ```
 
