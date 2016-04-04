@@ -122,8 +122,10 @@ precision <- 1 / obj$vi
 
 *** =solution
 ```{r}
-max_precision <- max(precision)
-influential_study <- catheter$Name[which(precision == max(precision))]
+max_precision <- max(precision, na.rm = TRUE)
+max_precision
+
+influential_study <- catheter$Name[which(precision == max_precision)]
 influential_study
 ```
 
@@ -195,11 +197,7 @@ Remember to exponentiate!
 library(metafor)
 library(rmeta)
 data(catheter)
-```
 
-
-*** =solution
-```{r}
 obj <- escalc(ai = col.trt, bi = col.ctrl,
 	ci = n.trt - col.trt, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "RR"
