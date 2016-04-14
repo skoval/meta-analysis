@@ -1,5 +1,5 @@
 ---
-title       : Heterogeneity
+title       : Heterogeneity and Bias
 description : Exercises to accompany Lecture 5.1 for `Meta-Analysis with R'
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:5
@@ -301,7 +301,246 @@ I2.rr
 test_error()
 test_object("I2.or")
 test_object("I2.rr")
-success_msg("You should be so pleased! You are all done!")
+success_msg("You should be so pleased! You are all done with exercises for Lecture 5.1!")
 ```
 
----
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
+## Concern with Bias
+
+Why is protecting against bias in a meta-analysis important?
+
+*** =instructions
+- Readers will not be interested in a biased study.
+- A biased meta-analysis misrepresents the evidence for the scientific question being evaluated. 
+- A biased meta-analysis won't get past peer-review.
+
+*** =hint
+Consider which response is the best definition of meta-analysis. 
+
+*** =sct
+```{r}
+
+msg1 <- "Try again. The interest of readers isn't a main concern when it comes to avoiding bias."
+msg2 <- "That's right. Bias, by definition, distorts the truth."
+msg3 <- "No. The presence of bias might, if obvious to reviewers, raise red flags but this isn't the primary reason to make efforts to protect against bias."
+
+test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3)) 
+```
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
+
+## Types of Bias
+
+Consider each of the situations described below. Which raises the least concern about potential bias?
+
+
+*** =instructions
+- In a clinical trial, the sickest patients dropped out of the study before it was completed.
+- The authors of the trial did not report any null findings. 
+- The authors did not report baseline characteristics about the participants. 
+
+*** =hint
+Recall that bias is a systematic misrepresentation of the effect of interest.
+
+*** =sct
+```{r}
+
+msg1 <- "Try again. This is an example of possible attrition bias."
+msg2 <- "No. This is an example of possible reporting bias."
+msg3 <- "You got it. The lack of reporting about the sample characteristics is poor writing but doesn't suggest any bias in the study findings."
+
+test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3)) 
+```
+
+
+--- type:NormalExercise lang:r  xp:100 skills:5
+## Making a Funnel Plot
+
+Obtain a funnel plot for the log-OR effects of the `dat.bcg` trial.
+
+
+*** =instructions
+- Fit the `DL` model for the log-OR effects for the `dat.bcg` study.
+- Use the `rma` plotting method to create a funnel plot.
+
+
+*** =hint
+Use the `funnel` method.
+
+*** =pre_exercise_code
+```{r}
+library(rmeta)
+library(metafor)
+data(dat.bcg)
+```
+
+
+*** =solution
+```{r}
+fit.or <- rma(measure="OR", ai=tpos, bi=tneg, ci=cpos, di=cneg, 
+	data=dat.bcg, method = "DL")
+
+
+funnel(fit.or)
+```
+
+
+*** =sct
+```{r}
+test_error()
+
+test_function("funnel", args = "x",
+              not_called_msg = "You should use the funnel method.")
+
+success_msg("You should be thrilled! You made a funnel plot.")
+```
+
+
+--- type:NormalExercise lang:r  xp:100 skills:5
+## Trim-And-Fill
+
+Use the trim-and-fill method to estimate the number of missing studies due to publication bias.
+
+
+*** =instructions
+- Fit the `DL` model for the log-OR effects for the `dat.bcg` study.
+- Use the `trimfill` to find the estimated number of missing studies.
+- Save your result as `bias`.
+
+
+*** =hint
+Use the `trimfill` method.
+
+*** =pre_exercise_code
+```{r}
+library(rmeta)
+library(metafor)
+data(dat.bcg)
+```
+
+
+*** =solution
+```{r}
+fit.or <- rma(measure="OR", ai=tpos, bi=tneg, ci=cpos, di=cneg, 
+	data=dat.bcg, method = "DL")
+
+bias <- trimfill(fit.or)
+bias
+```
+
+
+*** =sct
+```{r}
+test_error()
+test_object(bias)
+success_msg("Great job. You are mastering these topics.")
+```
+
+
+--- type:NormalExercise lang:r  xp:100 skills:5
+## Rank Test
+
+The `metafor` package includes a function `ranktest` that tests for asymmetry in the funnel plot. Determine the results of this test for the `dat.bcg` meta-analysis.
+
+
+*** =instructions
+- Fit the `DL` model for the log-OR effects for the `dat.bcg` study.
+- Use the `ranktest` method and save your result as `result`.
+
+
+*** =hint
+The method is applied to an object of call `rma`.
+
+*** =pre_exercise_code
+```{r}
+library(rmeta)
+library(metafor)
+data(dat.bcg)
+```
+
+
+*** =solution
+```{r}
+fit.or <- rma(measure="OR", ai=tpos, bi=tneg, ci=cpos, di=cneg, 
+	data=dat.bcg, method = "DL")
+
+result <- ranktest(fit.or)
+result
+```
+
+
+*** =sct
+```{r}
+test_error()
+test_object(result)
+success_msg("Excellent. That's exactly right!")
+```
+
+
+
+--- type:NormalExercise lang:r  xp:100 skills:5
+## Fail-Safe Number
+
+What is the fail-safe number for the `dat.bcg` meta-analysis? Is your finding consistent with the funnel plot analysis?
+
+
+*** =instructions
+- Use the `escalc` method to obtain the log-OR estimates for the `dat.bcg` study.
+- Find the fail-safe number using the appropriate method from the `rma` package.
+- Save your result as the object `failsafe`.
+
+
+*** =hint
+Use the `fsn` method.
+
+*** =pre_exercise_code
+```{r}
+library(rmeta)
+library(metafor)
+data(dat.bcg)
+```
+
+
+*** =solution
+```{r}
+obj <-  escalc(measure="OR", ai=tpos, bi=tneg, ci=cpos, di=cneg, 
+	data=dat.bcg)
+
+failsafe <- fsn(obj$yi, obj$vi)
+failsafe
+```
+
+
+*** =sct
+```{r}
+test_error()
+test_object(failsafe)
+success_msg("Excellent. You really have this down!")
+```
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
+
+## Interpreting Publication Bias Tools
+
+What is a major caveat with tests for publication bias like the funnel plot that could make it difficult to reach a conclusion about bias with the `dat.bcg` meta-analysis?
+
+*** =instructions
+- The trials have different study designs.
+- The results across trials are very heterogeneous.
+- The authors didn't search for non peer-reviewed articles.
+
+
+*** =hint
+Look at the $I^2$ for this study.
+
+*** =sct
+```{r}
+
+msg1 <- "Try again. The trials all had a similar design, and trial design isn't a central issue for the validity of publication bias evaluation."
+msg2 <- "Correct. Heterogeneity can make it difficult to detect evidence of bias."
+msg3 <- "No. We don't have enough information about the search strategy to know if this is the case."
+
+test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3)) 
+```
