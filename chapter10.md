@@ -289,7 +289,7 @@ fit.rr <- rma(measure="RR", ai=tpos, bi=tneg, ci=cpos, di=cneg,
 	data=dat.bcg, method = "DL")	
 
 I2.or <- confint(fit.or)$random[3,2:3]
-I2.rr <- confint(fit.orr)$random[3,2:3]
+I2.rr <- confint(fit.rr)$random[3,2:3]
 
 I2.or
 I2.rr
