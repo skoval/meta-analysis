@@ -1,6 +1,6 @@
 ---
 title       : Types of Effect
-description : Exercises to accompany Lecture 3 for `Meta-Analysis with R'
+description : Exercises to accompany Part 3 for `Meta-Analysis with R'
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:5
 
