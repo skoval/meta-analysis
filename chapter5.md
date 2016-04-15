@@ -1,6 +1,6 @@
 ---
 title       : Heterogeneity and Bias
-description : Exercises to accompany Lecture 5.1 for `Meta-Analysis with R'
+description : Exercises to accompany Part 5 of `Meta-Analysis with R'
 
 --- type:MultipleChoiceExercise lang:r xp:50 skills:5
 
