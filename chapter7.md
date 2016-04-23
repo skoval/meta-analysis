@@ -206,6 +206,6 @@ i2.diff
 *** =sct
 ```{r}
 test_error()
-test_object("i2.diff)
+test_object("i2.diff")
 success_msg("Correct. You have mastered the review of meta-regression!")
 ```
