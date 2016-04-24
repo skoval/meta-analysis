@@ -209,3 +209,141 @@ test_error()
 test_object("i2.diff")
 success_msg("Correct. You have mastered the review of meta-regression!")
 ```
+
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
+
+## Types of Missing Data
+
+What is the difference between partial and completely missing data in a meta-analysis?
+
+*** =instructions
+- Partially missing data is data reported for some subjects; completely missing is reported for none.
+- Partially missing data is data reported for some studies and completely missing is reported for none.
+- Partially missing data is when different variables are reproted for some studies and completely missing is when no studies have the same outcome measure.
+
+
+*** =hint
+Partially missing is participant-level missingness.
+
+*** =sct
+```{r}
+
+msg1 <- "Correct. Parital missingness is incomplete across some subjects in a study and completely missing is when no subjects in a study have data or it is not reported."
+msg2 <- "Try again. This is study-level missingness only."
+msg3 <- "No. These definitions don't involve concern a single variable and not the combination of variables."
+
+test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3)) 
+```
+
+
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
+
+## Sensitivity for Missing Data
+
+What is the purpose of a sensitivity analysis for missing data?
+
+*** =instructions
+- To see if missing data is present.
+- To see if bias due to missing data is present.
+- To see if studies with missing data differ from those with complete data.
+
+*** =hint
+Sensitivity analyses are intended to assess potential biases.
+
+*** =sct
+```{r}
+
+msg1 <- "Try again. This should be known and not something that needs analysis."
+msg2 <- "Right! The purpose of the sensitivity analysis is to assess the presence of potential missing-data bias."
+msg3 <- "No. This is a specific type of missing data comparison but not the general purpose of a sensitivity analysis."
+
+test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3)) 
+```
+
+--- type:NormalExercise lang:r  xp:200 skills:1
+## Conducting a Sensitivity Analysis
+
+Conduct an assessment of the possible bias due to missing data. This exercise will make use of the Ishak 2007 study which includes 46 studies of deep brain stimulation and its effectiveness on the motor skills of Parkinson's patients.
+
+*** =instructions
+- Assume `dat.ishak2007` is available.
+- The proportion of missing in each study is given in the variable `missing`.
+- Test the effect of `missing` on the `DL` estimator of the treatment effect using reported mean difference scores `y1i` with variance `v1i`.
+- Save the p-value of the test as `pval`.
+
+
+*** =hint
+Use meta-regression.
+
+*** =pre_exercise_code
+```{r}
+set.seed(11988)
+library(metafor)
+data(dat.ishak2007)
+dat.ishak2007 <- dat.ishak2007[,c("study","y1i","v1i")]
+dat.ishak2007$n <- ceiling(1 / dat.ishak2007$v1i)
+U <- runif(nrow(dat.ishak2007))
+dat.ishak2007$missing <- exp(dat.ishak2007$y1i + U) / (1 + exp(dat.ishak2007$y1i + U) )
+```
+
+
+*** =solution
+```{r}
+mreg <- fit(yi = y1i, vi = v1i, method = "DL",
+	data = dat.ishak2007, mods = ~ missing)
+
+pval <- mreg$pval[2] # Missing covariate
+summary(mreg)
+```
+
+*** =sct
+```{r}
+test_error()
+test_object("pval")
+success_msg("Fantastic. You just performed a sensitivity test for partially missing data!)
+```
+
+
+--- type:NormalExercise lang:r  xp:200 skills:1
+## Imputing Missing Variance
+
+In the following, some studies of the `data.ishak2007` control group are missing. Given the variance of the control groups `s2` and the control group sample size `n` perform a single imputation for each missing variance.
+
+*** =instructions
+- Assume `dat.ishak2007` is available in the workspace.
+- Assume that the sum of the numerators of the observed variances have a chi-squared distribution.
+- Use `rchisq` with the appropriate degrees of freedom. 
+
+
+*** =hint
+The degrees of freedom are the sum of each control group sample size with a known variance minus the studies with a known variance.
+
+*** =pre_exercise_code
+```{r}
+library(metafor)
+data(dat.ishak2007)
+dat.ishak2007 <- dat.ishak2007[,c("study","v1i")]
+dat.ishak2007$n <- ceiling(1 / dat.ishak2007$v1i)
+names(dat.ishak2007)[2] <- "s2"
+dat.ishak2007$s2[c(5,9,12)] <- NA
+```
+
+
+*** =solution
+```{r}
+df <- with(dat.ishak2007, sum((n - 1)[!is.na(s2)]))
+s2_obs <- with(dat.ishak2007, sum((n - 1) * s2, na.rm  = TRUE))
+X2 <- rchisq(3, df = df)
+s2_imp <- (s2_obs / X2) / with(dat.ishak2007, (n-1)[is.na(s2)])
+s2_imp
+```
+
+*** =sct
+```{r}
+test_error()
+test_function("rchisq", args = "df", not_called_msg = "You should sample from the rchisq function.")
+success_msg("Great job. You mastered the missing data exercises!")
+```
