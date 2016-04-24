@@ -303,7 +303,7 @@ summary(mreg)
 ```{r}
 test_error()
 test_object("pval")
-success_msg("Fantastic. You just performed a sensitivity test for partially missing data!)
+success_msg("Fantastic. You just performed a sensitivity test for partially missing data!")
 ```
 
 
