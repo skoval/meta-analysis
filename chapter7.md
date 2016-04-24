@@ -340,7 +340,7 @@ dat.ishak2007 <- structure(list(study = c("Alegret (2001)", "Barichella (2003)",
 "mbase"), class = "data.frame", row.names = c(NA, -46L))
 dat.ishak2007 <- dat.ishak2007[!is.na(dat.ishak2007$y1i),]
 dat.ishak2007 <- dat.ishak2007[,c("study","y1i","v1i")]
-dat.ishak2007$n <- ceiling(1 / dat.ishak2007$v1i)
+dat.ishak2007$n <- ceiling(dat.ishak2007$v1i * 10)
 U <- runif(nrow(dat.ishak2007))
 dat.ishak2007$missing <- exp(dat.ishak2007$y1i + U) / (1 + exp(dat.ishak2007$y1i + U) )
 ```
@@ -437,7 +437,7 @@ dat.ishak2007 <- structure(list(study = c("Alegret (2001)", "Barichella (2003)",
 "mbase"), class = "data.frame", row.names = c(NA, -46L))
 dat.ishak2007 <- dat.ishak2007[!is.na(dat.ishak2007$y1i),]
 dat.ishak2007 <- dat.ishak2007[,c("study","v1i")]
-dat.ishak2007$n <- ceiling(1 / dat.ishak2007$v1i)
+dat.ishak2007$n <- ceiling(dat.ishak2007$v1i * 10)
 names(dat.ishak2007)[2] <- "s2"
 dat.ishak2007$s2[c(5,9,12)] <- NA
 ```
