@@ -266,7 +266,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3))
 --- type:NormalExercise lang:r  xp:200 skills:1
 ## Conducting a Sensitivity Analysis
 
-Conduct an assessment of the possible bias due to missing data. This exercise will make use of the Ishak 2007 study which includes 46 studies of deep brain stimulation and its effectiveness on the motor skills of Parkinson's patients.
+Conduct an assessment of the possible bias due to missing data. This exercise will make use of the Ishak 2007 study which includes 24 studies of deep brain stimulation and its effectiveness on the motor skills of Parkinson's patients.
 
 *** =instructions
 - Assume `dat.ishak2007` is available.
@@ -338,6 +338,7 @@ dat.ishak2007 <- structure(list(study = c("Alegret (2001)", "Barichella (2003)",
     43.5, 47.4, 44.9, 41.6, 49, 53, 48.8, 56.4, 50.3)), .Names = c("study", 
 "y1i", "v1i", "y2i", "v2i", "y3i", "v3i", "y4i", "v4i", "mdur", 
 "mbase"), class = "data.frame", row.names = c(NA, -46L))
+dat.ishak2007 <- dat.ishak2007[!is.na(dat.ishak2007$y1i),]
 dat.ishak2007 <- dat.ishak2007[,c("study","y1i","v1i")]
 dat.ishak2007$n <- ceiling(1 / dat.ishak2007$v1i)
 U <- runif(nrow(dat.ishak2007))
@@ -434,6 +435,7 @@ dat.ishak2007 <- structure(list(study = c("Alegret (2001)", "Barichella (2003)",
     43.5, 47.4, 44.9, 41.6, 49, 53, 48.8, 56.4, 50.3)), .Names = c("study", 
 "y1i", "v1i", "y2i", "v2i", "y3i", "v3i", "y4i", "v4i", "mdur", 
 "mbase"), class = "data.frame", row.names = c(NA, -46L))
+dat.ishak2007 <- dat.ishak2007[!is.na(dat.ishak2007$y1i),]
 dat.ishak2007 <- dat.ishak2007[,c("study","v1i")]
 dat.ishak2007$n <- ceiling(1 / dat.ishak2007$v1i)
 names(dat.ishak2007)[2] <- "s2"
