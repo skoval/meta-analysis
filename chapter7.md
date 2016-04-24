@@ -341,8 +341,7 @@ dat.ishak2007 <- structure(list(study = c("Alegret (2001)", "Barichella (2003)",
 dat.ishak2007 <- dat.ishak2007[!is.na(dat.ishak2007$y1i),]
 dat.ishak2007 <- dat.ishak2007[,c("study","y1i","v1i")]
 dat.ishak2007$n <- ceiling(dat.ishak2007$v1i * 10)
-U <- runif(nrow(dat.ishak2007))
-dat.ishak2007$missing <- exp(dat.ishak2007$y1i + U) / (1 + exp(dat.ishak2007$y1i + U) )
+dat.ishak2007$missing <- runid(nrow(dat.ishak2007), 0, 0.3)
 ```
 
 
