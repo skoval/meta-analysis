@@ -347,7 +347,7 @@ dat.ishak2007$missing <- exp(dat.ishak2007$y1i + U) / (1 + exp(dat.ishak2007$y1i
 
 *** =solution
 ```{r}
-mreg <- fit(yi = y1i, vi = v1i, method = "DL",
+mreg <- rma(yi = y1i, vi = v1i, method = "DL",
 	data = dat.ishak2007, mods = ~ missing)
 
 pval <- mreg$pval[2] # Missing covariate
