@@ -94,9 +94,6 @@ positive <- 2 # Only 2 of the 10 were positive studies
 
 *** =sct
 ```{r}
-test_function("assign", args = "x",
-              not_called_msg = "You didn't summarize your findings")
-
 test_object("positive")
 test_error()
 success_msg("Good work!")

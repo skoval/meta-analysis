@@ -251,7 +251,6 @@ Use the `forest` method.
 ```{r}
 library(metafor)
 data(dat.bcg)
-
 ```
 
 
@@ -265,8 +264,7 @@ forest(fit)
 ```{r}
 test_error()
 
-test_function("forest", args = "x",
-              not_called_msg = "You should use the forest function.")
+test_function("forest", not_called_msg = "You should use the forest function.")
 
 success_msg("Great! You are really demonstrating your understanding.")
 ```

@@ -433,7 +433,7 @@ bias
 *** =sct
 ```{r}
 test_error()
-test_object(bias)
+test_object("bias")
 success_msg("Great job. You are mastering these topics.")
 ```
 
@@ -473,7 +473,7 @@ result
 *** =sct
 ```{r}
 test_error()
-test_object(result)
+test_object("result")
 success_msg("Excellent. That's exactly right!")
 ```
 
@@ -515,7 +515,7 @@ failsafe
 *** =sct
 ```{r}
 test_error()
-test_object(failsafe)
+test_object("failsafe")
 success_msg("Excellent. You really have this down!")
 ```
 
