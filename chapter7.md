@@ -560,7 +560,6 @@ success_msg("Great job. You have a good understanding of patient-data meta-analy
 
 
 
-
 --- type:NormalExercise lang:r  xp:200 skills:1
 ## Performing Two-Step Meta-Analysis
 
@@ -601,7 +600,7 @@ data <- do.call("rbind", lapply(split_data, function(obj){
 	fit <- glm(los ~ 1, data = obj, family = poisson)
 	data.frame(
 		yi = coef(fit),
-		vi = vcov(fit)
+		vi = as.numeric(vcov(fit))
 	)
 }))
 
@@ -616,3 +615,4 @@ test_object("data")
 test_function("rma", args = "method", not_called_msg = "You should use the rma function.")
 success_msg("Fantastic! You have mastered IPD meta-analysis.")
 ```
+
