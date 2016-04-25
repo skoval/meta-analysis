@@ -600,7 +600,7 @@ data <- do.call("rbind", lapply(split_data, function(obj){
 	fit <- glm(los ~ 1, data = obj, family = poisson)
 	data.frame(
 		yi = coef(fit),
-		vi = as.numeric(vcov(fit))
+		vi = vcov(fit)[1,1]
 	)
 }))
 
