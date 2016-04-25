@@ -512,11 +512,11 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 --- type:NormalExercise lang:r  xp:150 skills:1
 ## Performing One-Step Meta-Analysis
 
-In this exercise, you will perform a pooled meta-analysis and examine between-study meta-regression.
+In this exercise, you will perform a pooled meta-analysis and examine between-study heterogeneity.
 
 *** =instructions
 - The dataset `normand1999` contained pooled data for 9 studies.
-- The outcome is the length of stay among hospital patients.
+- The outcome is the length of stay (in days) among hospital patients.
 - The purpose of the meta-analysis is to obtain an overall summary of the typical length of stay.
 - Use a Poisson regression and determine the significance of between-study effects.
 - Save the model as `fit`.
@@ -537,7 +537,7 @@ los <- unlist(mapply(function(n, m, s){
 
 normand1999 <- data.frame(
 	study = rep(1:9, dat.normand1999$n1i),
-	los = ifelse(los < 0, 1, los)
+	los = ceiling(ifelse(los < 0, 1, los))
 )
 ```
 
@@ -588,7 +588,7 @@ los <- unlist(mapply(function(n, m, s){
 
 normand1999 <- data.frame(
 	study = rep(1:9, dat.normand1999$n1i),
-	los = ifelse(los < 0, 1, los)
+	los = ceiling(ifelse(los < 0, 1, los))
 )
 ```
 
