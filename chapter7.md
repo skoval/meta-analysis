@@ -457,3 +457,162 @@ test_error()
 test_function("rchisq", args = "df", not_called_msg = "You should sample from the rchisq function.")
 success_msg("Great job. You mastered the missing data exercises!")
 ```
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
+
+## Individual Patient Data Meta-Analysis
+
+What is an IPD meta-analysis?
+
+*** =instructions
+- This is a meta-analysis where all enrolled patients are included.
+- This is a pooled analysis with all the raw study data.
+- A meta-analysis of one patient per study.
+
+
+*** =hint
+The unit of analysis is different from a standard meta-analysis.
+
+*** =sct
+```{r}
+
+msg1 <- "Try again. When only aggregate information is available, it is a standard meta-analysis."
+msg2 <- "Exactly. This is a pooled study with data from all the study participants."
+msg3 <- "No. This is not a description of a meta-analysis."
+
+test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3)) 
+```
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
+
+## Benefits of IPD Meta-Analysis
+
+Which is _not_ a potential benefit of IPD meta-analysis?
+
+*** =instructions
+- Investigating patient-treatment interactions.
+- Harmonizing variable definitions.
+- Preventing missing data.
+
+
+*** =hint
+Harmonizing variable definitions is an advantage.
+
+*** =sct
+```{r}
+
+msg1 <- "Try again. With patient data, we can investigate how patient factors influence treatment effects."
+msg2 <- "No. This is a major advantage of an IPD meta-analysis."
+msg3 <- "Correct. An IPD analysis cannot eliminate missing data."
+
+test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3)) 
+```
+
+
+--- type:NormalExercise lang:r  xp:150 skills:1
+## Performing One-Step Meta-Analysis
+
+In this exercise, you will perform a pooled meta-analysis and examine between-study meta-regression.
+
+*** =instructions
+- The dataset `normand1999` contained pooled data for 9 studies.
+- The outcome is the length of stay among hospital patients.
+- The purpose of the meta-analysis is to obtain an overall summary of the typical length of stay.
+- Use a Poisson regression and determine the significance of between-study effects.
+- Save the model as `fit`.
+
+
+*** =hint
+Use `glm` for the model.
+
+*** =pre_exercise_code
+```{r}
+set.seed(11115)
+library(metafor)
+data(dat.normand1999)
+
+los <- unlist(mapply(function(n, m, s){
+	rnorm(n, m, s)
+}, n = dat.normand1999$n1i, m = dat.normand1999$m1i, s = dat.normand1999$sd1i))
+
+normand1999 <- data.frame(
+	study = rep(1:9, dat.normand1999$n1i),
+	los = ifelse(los < 0, 1, los)
+)
+```
+
+
+*** =solution
+```{r}
+fit <- glm(los ~ factor(study), data = normand1999,
+	family = "poisson")
+
+summary(fit)
+anova(fit, test = "Chisq") # Test for between-study differences
+```
+
+*** =sct
+```{r}
+test_error()
+test_function("glm", args = "family", not_called_msg = "You should use the family argument of the glm function.")
+success_msg("Great job. You have a good understanding of patient-data meta-analysis.")
+```
+
+
+
+
+--- type:NormalExercise lang:r  xp:200 skills:1
+## Performing Two-Step Meta-Analysis
+
+Using the `normand1999` dataset, obtain the log-rate for each study and fit the DerSimonian-Laird meta-analysis.
+
+
+*** =instructions
+- Use `glm` and the Poisson regression for each log-rate.
+- Store the result in `data` and call the outcome `yi` and variance `vi`.
+- Fit a DL meta-analysis with the `rma` function.
+
+
+*** =hint
+Use `rma` with `DL` method for the meta-analysis.
+
+*** =pre_exercise_code
+```{r}
+set.seed(11115)
+library(metafor)
+data(dat.normand1999)
+
+los <- unlist(mapply(function(n, m, s){
+	rnorm(n, m, s)
+}, n = dat.normand1999$n1i, m = dat.normand1999$m1i, s = dat.normand1999$sd1i))
+
+normand1999 <- data.frame(
+	study = rep(1:9, dat.normand1999$n1i),
+	los = ifelse(los < 0, 1, los)
+)
+```
+
+
+*** =solution
+```{r}
+split_data <- split(normand1999, f = factor(normand1999$study))
+
+data <- do.call("rbind", lapply(split_data, function(obj){
+	fit <- glm(los ~ 1, data = obj, family = poisson)
+	data.frame(
+		yi = coef(fit),
+		vi = vcov(fit)
+	)
+}))
+
+fit <- rma(yi = yi, vi = vi, data = data, method = "DL")
+summary(fit)
+```
+
+*** =sct
+```{r}
+test_error()
+test_object("data")
+test_function("rma", args = "method", not_called_msg = "You should use the rma function.")
+success_msg("Fantastic! You have mastered IPD meta-analysis.")
+```
