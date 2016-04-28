@@ -633,7 +633,6 @@ Rare events are when the events are close or equal to zero for some groups.
 ```{r}
 library(metafor)
 data(dat.bcg)
-)
 ```
 
 
@@ -782,5 +781,5 @@ OR <- exp(summary(fit)$cmbd[1])
 ```{r}
 test_error()
 test_object("OR")
-success_msg("Congratulations! You should feel like an expert!)
+success_msg("Congratulations! You should feel like an expert!")
 ```
