@@ -616,3 +616,171 @@ test_function("rma", args = "method", not_called_msg = "You should use the rma f
 success_msg("Fantastic! You have mastered IPD meta-analysis.")
 ```
 
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5
+
+## Rare Events
+
+Examine the dataset `dat.bcg`. Are rare events a concern for this meta-analysis?
+
+*** =instructions
+- Yes.
+- No.
+
+*** =hint
+Rare events are when the events are close or equal to zero for some groups.
+
+*** =pre_exercise_code
+```{r}
+library(metafor)
+data(dat.bcg)
+)
+```
+
+
+*** =sct
+```{r}
+
+msg1 <- "Correct. Some groups have fewer than 5 events, so rare-event effects are a concern."
+msg2 <- "Wrong.  There are ver few events for some groups."
+
+test_mc(correct = 1, feedback_msgs = c(msg1, msg2)) 
+```
+
+--- type:NormalExercise lang:r  xp:150 skills:1
+## Peto Method
+
+Use the `metabin` function and Peto's method to perform a meta-analysis of odds ratios for the `dat.bcg` study. What does the analysis suggest about the effect of the BCG vaccine?
+
+
+*** =instructions
+- Load `meta` package.
+- Fit using the `metabin` function.
+- Save the `OR` for the fixed effects model as the object `OR`.
+
+
+
+*** =hint
+Remember to compute the total sample size for each group.
+
+*** =pre_exercise_code
+```{r}
+library(metafor)
+data(dat.bcg)
+```
+
+
+*** =solution
+```{r}
+library(meta)
+
+dat.bcg$tn <- with(dat.bcg, tpos + tneg)
+dat.bcg$cn <- with(dat.bcg, cpos + cneg)
+
+fit <- metabin(tpos, tn, cpos, cn, data = dat.bcg,
+	method = "Peto", sm = "OR")
+
+summary(fit)
+
+OR <- exp(summary(fit)$fixed$TE)	
+```
+
+*** =sct
+```{r}
+test_error()
+test_object("OR")
+success_msg("Excellent! That was challenging, and you got it!")
+```
+
+
+
+--- type:NormalExercise lang:r  xp:150 skills:1
+## Mantel-Haenszel Method
+
+Use the `metabin` function and the Mantel-Haenszel method to perform a meta-analysis of odds ratios for the `dat.bcg` study. What do you find in this case?
+
+
+*** =instructions
+- Load `meta` package.
+- Fit using the `metabin` function.
+- Save the `OR` for the fixed effects model as the object `OR`.
+
+
+
+*** =hint
+Make sure to prevent a correction factor from being included.
+
+*** =pre_exercise_code
+```{r}
+library(metafor)
+data(dat.bcg)
+```
+
+
+*** =solution
+```{r}
+library(meta)
+
+dat.bcg$tn <- with(dat.bcg, tpos + tneg)
+dat.bcg$cn <- with(dat.bcg, cpos + cneg)
+
+fit <- metabin(tpos, tn, cpos, cn, data = dat.bcg,
+	method = "MH", sm = "OR", MH.exact = TRUE)
+
+summary(fit)
+
+OR <- exp(summary(fit)$fixed$TE)	
+```
+
+*** =sct
+```{r}
+test_error()
+test_object("OR")
+success_msg("That's great! You are really mastering this.")
+```
+
+
+--- type:NormalExercise lang:r  xp:200 skills:1
+## Confidence Distribution Method
+
+Another approach for handling rare events, is the confidence distribution method. Use this to find the odd ratio summary for the `dat.bcg` study. How does your finding compare to the alternatives?
+
+
+*** =instructions
+- Load `gmeta` package.
+- Fit using the `gmeta` function.
+- Use the `exact1` method.
+- Save the `OR` for the fixed effects model as the object `OR`.
+
+
+
+*** =hint
+Arrange your data set as event, sample size for the treatment and control group.
+
+*** =pre_exercise_code
+```{r}
+library(metafor)
+data(dat.bcg)
+```
+
+
+*** =solution
+```{r}
+library(gmeta)
+
+dat.bcg$tn <- with(dat.bcg, tpos + tneg)
+dat.bcg$cn <- with(dat.bcg, cpos + cneg)
+
+fit <- gmeta(dat.bcg[,c("tpos", "tn", "cpos", "cn")], 
+	method = "exact1",  gmi.type = "2x2")
+
+exp(summary(fit)$cmbd) # Combined CI
+
+OR <- exp(summary(fit)$cmbd[1])	
+```
+
+*** =sct
+```{r}
+test_error()
+test_object("OR")
+success_msg("Congratulations! You should feel like an expert!)
+```
