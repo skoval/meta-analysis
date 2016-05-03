@@ -2,7 +2,7 @@
 title       : Introduction to Meta-Analysis
 description : Exercises to accompany Part 1 for `Meta-Analysis with R'
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:c1bfbf3c41e91d8f0d49daba64d12e7b4d98798d
 ## Invention of Meta-Analysis
 
 Which one of the following best describes the situation that prompted the development of meta-analysis? 
@@ -26,7 +26,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:96f0fb919b5a22b0aed78fb973c5fc8bb18990fb
 ## Meta-Analysis Versus Literature Review
 
 Glass's criticism of Han Eysenck's review points out a number of ways that meta-analysis differs from a literature review. Which of the following is one of those differences?
@@ -51,7 +51,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:NormalExercise lang:r xp:100 skills:3
+--- type:NormalExercise lang:r xp:100 skills:3 key:99f5dc3cd37ec9a6b55f72608d8a0ae79735f68a
 ## Vote Counting
 
 To understand the concerns with vote counting, you will apply the method yourself. 
@@ -98,7 +98,7 @@ test_object("positive")
 test_error()
 success_msg("Good work!")
 ```
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:55dd6f1af98cfcb9ad270271be6f69e39259b645
 ## Reasons for Conducting Meta-Analysis
 
 Which one of the following is a reason to conduct a meta-analysis?
@@ -123,7 +123,7 @@ test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:100 skills:5
+--- type:MultipleChoiceExercise lang:r xp:100 skills:5 key:8cd40690155b45cec47255d7582caa7bf8b5184e
 ## Identifying a Meta-Analysis (1)
 
 Read the following study's objective and methods and determine whether this study is an example of a meta-analysis?
@@ -148,7 +148,7 @@ msg2 <- "Try again. Recall the definition of a meta-analysis. Does the study fit
 test_mc(correct = 1, feedback_msgs = c(msg1, msg2)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:100 skills:5
+--- type:MultipleChoiceExercise lang:r xp:100 skills:5 key:6098538e77f590a73623d36f299754358cb0872b
 ## Identifying a Meta-Analysis (2)
 
 Read the following study's objective and methods and determine whether this study is an example of a meta-analysis?
@@ -172,7 +172,7 @@ msg2 <- "That's right. Although the study uses multiple sites, it is a retrospec
 test_mc(correct = 2, feedback_msgs = c(msg1, msg2)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:06306d067374c2a3d5f0191909736bf94f9560a9
 ## Streptokinase and Heart Attack
 
 What was the main point of the meta-analysis Lua and colleagues performed on the historical studies of streptokinase as a treatment for heart attack?
@@ -199,7 +199,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:2b81b58218d2ba5238f444a220c6284ae8bce3b8
 ## Traditional Versus Cumulative Meta-Analysis
 
 The Lau et al. study is an example of a _cumulative meta-analysis_. What is unique about this type of meta-analysis?
@@ -223,7 +223,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:8e9b571bb0f55dbfe5753a95c5c5970cfa848252
 ## Impact of Meta-Analysis
 
 
@@ -247,7 +247,7 @@ msg3 <- "Try again. Meta-analysis has not had a particulary integral role in thi
 test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:47a2b8ad3d34d7d27dcd488e8f09b18c01821a3d
 ## Limitations of Meta-Analysis
 
 What is one of the criticisms that has made past meta-analyses of breast cancer screening mammography difficult to interpret?
@@ -271,7 +271,7 @@ msg3 <- "Try again. The meta-analysis have considered overall survival in additi
 test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:c6f73ba4d81fe2da5e1e6d4f5f15a6a25ce5197c
 ## Definition of a Systematic Review
 
 Which of the following is the most accurate description of a systematic review?
@@ -296,7 +296,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:8ee7514396962f8479d727ab5c55a32c7f705506
 ## Checklists for Systematic Review
 
 A number of resources are available for helping perfom a systematic review. Which of the following is _not_ a checklist discussed?
@@ -321,7 +321,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:113064af4e439c89652a8cfc10855254cf4f931c
 ## Systematic Review versus Meta-Analysis
 
 
@@ -343,7 +343,7 @@ msg2 <- "Right! A meta-analysis is always a systematic review but a review need 
 test_mc(correct = 2, feedback_msgs = c(msg1, msg2)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:c69efefc456704a1af38129b6b23f1f64446261d
 ## What Meta-Analysis Adds
 
 
@@ -368,7 +368,7 @@ msg3 <- "Try again. The search for studies happens before the meta-analysis."
 test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:ca7104d708e3098c797eafab9a471873b84a434e
 ## When a Meta-Analysis is Appropriate
 
 Which of the following would be a reason you might not perform a meta-analysis as part of a systematic review?
@@ -392,7 +392,7 @@ msg2 <- "Try again. Similarity of effect types helps to facilitate a meta-analys
 test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:f5f5b69988226c01cb7dcf28c3fa73c0108f311c
 ## Getting Help
 
 Looking up the function `funnel` to see how to access documentation for the `meta` package.
@@ -428,7 +428,7 @@ success_msg("Good job! Head over to the next exercise")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:0262a285392519ff16d9976fe828800de67515fd
 ## Function Arguments
 
 How would you determine the arguments for the function `funnel`?
@@ -464,7 +464,7 @@ success_msg("Good job! Head over to the next exercise")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:5
+--- type:NormalExercise lang:r  xp:100 skills:5 key:3f6f42d264983a298b37a6d801b35b10703d5eba
 ## Manipulating Data
 
 
@@ -506,7 +506,7 @@ test_function("nrow", args = "x",
 success_msg("Good job! Head over to the next exercise")
 ```
 
---- type:NormalExercise lang:r  xp:100 skills:5
+--- type:NormalExercise lang:r  xp:100 skills:5 key:077ed83361f1e18d0f36d33cbbeaa210f3008c9c
 ## Inspecting Data
 
 Determine the type of outcome examined in the `dat.bonett2010` dataset of the `metafor` package.
