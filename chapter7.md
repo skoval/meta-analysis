@@ -783,3 +783,116 @@ test_error()
 test_object("OR")
 success_msg("Congratulations! You should feel like an expert!")
 ```
+
+
+
+--- type:NormalExercise lang:r  xp:100 skills:1
+## Small Study Effects
+
+In this problem, we look at possible small study effects for among 48 studies looking at the effectiveness of school-based writing-to-learn interventions on academic achievement.
+
+
+
+*** =instructions
+- The dataset `dat.bangertdrowns2004` has 46 studies.
+- Count the number of studies with fewer than 100 subjects.
+- Save the count as `small.n`
+
+
+*** =hint
+The variable `n` has the sample sizes.
+
+*** =pre_exercise_code
+```{r}
+library(metafor)
+data(dat.bangertdrowns2004)
+```
+
+
+*** =solution
+```{r}
+head(dat.bangertdrowns2004)
+small.n <- sum(dat.bangertdrowns2004$n < 100)
+small.n
+```
+
+*** =sct
+```{r}
+test_error()
+test_object("small.n")
+success_msg("That's right! You are ready for the next problem.")
+```
+
+
+--- type:NormalExercise lang:r  xp:200 skills:1
+## Funnel Plot for Small Study Effects
+
+Using the `dat.bangertdrowns2004` study, plot the data in a way that will help visualize possible small study effects.
+
+
+*** =instructions
+- Use the mean differences in `yi` and variances `vi`
+- Fit a DerSimonian-Laird model with `rma`.
+- Make a funnel plot
+- What does this suggest?
+
+*** =hint
+The function `funnel` makes a funnel plot of a fitted `rma` object.
+
+*** =pre_exercise_code
+```{r}
+library(metafor)
+data(dat.bangertdrowns2004)
+```
+
+
+*** =solution
+```{r}
+fit <- rma(yi = yi, vi = vi, data = dat.bangertdrowns2004, method = "DL")
+funnel(fit)
+```
+
+*** =sct
+```{r}
+test_error()
+test_function("funnel", args = "x", not_called_msg = "You should make a funnel plot.")
+success_msg("Great job! You are mastering this.")
+```
+
+
+--- type:NormalExercise lang:r  xp:200 skills:1
+## Influence Diagnostics
+
+Using the `dat.bangertdrowns2004` study, conduct a leave-one-out sensitivity analysis and find the range of the effect sizes for the mean difference. Does this range concern about the robustness of the analysis?
+
+
+*** =instructions
+- Use the mean differences in `yi` and variances `vi`
+- Fit a DerSimonian-Laird model with `rma`
+- Use the `leave1out` method.
+- Store the range as `effect.range`
+
+*** =hint
+The effect sizes are the variable `estimate` in the `leave1out` output.
+
+*** =pre_exercise_code
+```{r}
+library(metafor)
+data(dat.bangertdrowns2004)
+```
+
+
+*** =solution
+```{r}
+fit <- rma(yi = yi, vi = vi, data = dat.bangertdrowns2004, method = "DL")
+leave_out <- leave1out(fit)
+effect.range <- range(leave_out$estimate)
+effect.range
+```
+
+*** =sct
+```{r}
+test_error()
+test_object("effect.range")
+success_msg("Congratulations, you are all done!")
+```
