@@ -738,54 +738,6 @@ success_msg("That's great! You are really mastering this.")
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
-## Confidence Distribution Method
-
-Another approach for handling rare events, is the confidence distribution method. Use this to find the odd ratio summary for the `dat.bcg` study. How does your finding compare to the alternatives?
-
-
-*** =instructions
-- Load `gmeta` package.
-- Fit using the `gmeta` function.
-- Use the `exact1` method.
-- Save the `OR` for the fixed effects model as the object `OR`.
-
-
-
-*** =hint
-Arrange your data set as event, sample size for the treatment and control group.
-
-*** =pre_exercise_code
-```{r}
-library(metafor)
-data(dat.bcg)
-```
-
-
-*** =solution
-```{r}
-library(gmeta)
-
-dat.bcg$tn <- with(dat.bcg, tpos + tneg)
-dat.bcg$cn <- with(dat.bcg, cpos + cneg)
-
-fit <- gmeta(dat.bcg[,c("tpos", "tn", "cpos", "cn")], 
-	method = "exact1",  gmi.type = "2x2")
-
-exp(summary(fit)$cmbd) # Combined CI
-
-OR <- exp(summary(fit)$cmbd[1])	
-```
-
-*** =sct
-```{r}
-test_error()
-test_object("OR")
-success_msg("Congratulations! You should feel like an expert!")
-```
-
-
-
 --- type:NormalExercise lang:r  xp:100 skills:1
 ## Small Study Effects
 
@@ -894,5 +846,5 @@ effect.range
 ```{r}
 test_error()
 test_object("effect.range")
-success_msg("Congratulations, you are all done!")
+success_msg("Really well done! Excellent job.")
 ```
