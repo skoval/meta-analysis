@@ -848,3 +848,136 @@ test_error()
 test_object("effect.range")
 success_msg("Really well done! Excellent job.")
 ```
+
+
+--- type:NormalExercise lang:r  xp:100 skills:1
+## Network Meta-Analysis
+
+The `parkinson` data set contains the mean lost work-time reduction in patients given dopamine agonists as adjunct therapy in Parkinson’s disease. Treatments are placebo, coded 1, and four active drugs coded 2 to 5. 
+
+
+*** =instructions
+- Examine the Parkinson data
+- Determine the total pairwise comparisons (direct and indirect) that are possible
+- Determine the number that were observed
+- Store each answer as `total` and `observed`
+
+*** =hint
+Use the function `choose`.
+
+*** =pre_exercise_code
+```{r}
+library(netmeta)
+data(parkinson)
+
+# Transform data from arm-based format to contrast-based format
+parkinson <- pairwise(list(Treatment1, Treatment2, Treatment3),
+               n=list(n1, n2, n3),
+               mean=list(y1, y2, y3),
+               sd=list(sd1, sd2, sd3),
+               data=parkinson, studlab=Study)
+```
+
+
+*** =solution
+```{r}
+parkinson
+total <- choose(5, 2) # 5 total treatments
+observed <- 6
+c(total, observed)
+```
+
+*** =sct
+```{r}
+test_error()
+test_object("total")
+test_object("observed")
+success_msg("Great job! You are ready for the next question.")
+```
+
+--- type:NormalExercise lang:r  xp:200 skills:1
+## Network Graph
+
+Create a network graph with the `parkinson` data set.
+
+*** =instructions
+- Fit a fixed effects model on the mean differenes with `netmeta`
+- Use this to draw the network graph using the function `netgraph`
+- Make treatment 1 (placebo) your reference
+
+*** =hint
+Give the `TE` and `seTE` to `netmeta`.
+
+*** =pre_exercise_code
+```{r}
+library(netmeta)
+data(parkinson)
+
+# Transform data from arm-based format to contrast-based format
+parkinson <- pairwise(list(Treatment1, Treatment2, Treatment3),
+               n=list(n1, n2, n3),
+               mean=list(y1, y2, y3),
+               sd=list(sd1, sd2, sd3),
+               data=parkinson, studlab=Study)
+```
+
+
+*** =solution
+```{r}
+fit <- netmeta(TE, seTE, treat1, treat2, studlab,
+        data = parkinson, sm = "MD", reference = "1")
+
+netgraph(fit)
+```
+
+*** =sct
+```{r}
+test_error()
+test_function("netgraph", args = "x", not_called_msg = "You should use netgraph")
+success_msg("Fantastic! That was challenging, but you got it!")
+```
+
+--- type:NormalExercise lang:r  xp:250 skills:1
+## Network Meta-Analysis
+
+Fit a random effects network meta-analysis on the `parkinson` data set.
+
+*** =instructions
+- Fit a random effects model on the mean differenes with `netmeta`
+- Inspect your findings using the `forest` method.
+
+*** =hint
+Make sure to use `comb.random`.
+
+*** =pre_exercise_code
+```{r}
+library(netmeta)
+data(parkinson)
+
+# Transform data from arm-based format to contrast-based format
+parkinson <- pairwise(list(Treatment1, Treatment2, Treatment3),
+               n=list(n1, n2, n3),
+               mean=list(y1, y2, y3),
+               sd=list(sd1, sd2, sd3),
+               data=parkinson, studlab=Study)
+```
+
+
+*** =solution
+```{r}
+fit <- netmeta(TE, seTE, treat1, treat2, studlab,
+        data = parkinson, sm = "MD", reference = "1",
+        comb.random = TRUE)
+
+fit
+
+forest(fit, ref = "1")
+```
+
+*** =sct
+```{r}
+test_error()
+test_object("fit")
+success_msg("You should be really pleased! You mastered the advanced coursework!)
+```
+
