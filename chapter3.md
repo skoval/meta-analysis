@@ -2,7 +2,7 @@
 title       : Types of Effect
 description : Exercises to accompany Part 3 for `Meta-Analysis with R'
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:c47531922409bfde495988b8492caed5f83068cb
 
 ## Choosing an Effect Size (1)
 
@@ -33,7 +33,7 @@ msg4 <- "Try again. This would be an appropriate summary for comparing the outco
 test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3, msg4)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:95b69f3ad6349dc5bd9a999812d11d8417ddb008
 
 ## Choosing an Effect Size (2)
 
@@ -63,7 +63,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:9be0c6b97b4ccc6da4cd0b6780da4b8279b74138
 ## Calculating an Effect Size
 
 Calculate the difference in proportions for the `e` and `c` groups of the `Olkin95` dataset. 
@@ -95,7 +95,7 @@ success_msg("Excellent work! You are ready for the next exercise.")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:c0efe88701ae6a7fdc7ee1c48970d1488acd7e89
 ## Using the `escalc` Function
 
 Calculate the log odds ratio between the events of the `e` and `c` groups of the `Olkin95` dataset. 
@@ -132,7 +132,7 @@ success_msg("Good job! Head over to the next exercise")
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:3cce365610a0ab3b7d9ef53e838d6fc67108200f
 ## Inspecting the Effects
 
 Create a plot of the odds ratios between the events of the `e` and `c` groups of the `Olkin95` dataset and determine the study with the largest odds ratio.
@@ -175,7 +175,7 @@ success_msg("Good job! Head over to the next exercise")
 ```
 
 
---- type:NormalExercise lang:r  xp:300 skills:5
+--- type:NormalExercise lang:r  xp:300 skills:5 key:4749c1badeec331a1079f1fc36cee32bf525ccad
 ## Working with Continuous Outcomes
 
 Calculate the mean difference in length of stay using the dataset `dat.normand1999`. 
@@ -210,7 +210,7 @@ success_msg("Excellent work! You are ready for the next exercise.")
 ```
 
 
---- type:NormalExercise lang:r  xp:300 skills:5
+--- type:NormalExercise lang:r  xp:300 skills:5 key:5fecf88a095e785ec5f4170e6bca93ef6a6f628e
 ## Comparing Effects
 
 Calculate the standardized mean difference for the previous problem and contrast it with the mean difference in a plot.

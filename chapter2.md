@@ -3,7 +3,7 @@ title       : Reference Management in R
 description : Exercises to accompany Part 2 for `Meta-Analysis with R'
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:3b49f7b50dc33e885800c57c775a01d4be7a5f74
 ## Querying References
 
 Use the `RISmed` package to search for PubMed articles on meta-analysis. How many articles were found?
@@ -43,7 +43,7 @@ success_msg("Good job! Head over to the next exercise")
 
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:266e97d7e08f6f10cf8392bfa4cd1103e4adab68
 ## Importing References
 
 Import the first 10 records from the search of articles on meta-analysis.
@@ -84,7 +84,7 @@ success_msg("Good job! Head over to the next exercise")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:b29d69eb23522694b2aaae1e0cd74cebc72a4241
 ## Manipulating References
 
 Examine the journals that the articles were published in.
@@ -125,7 +125,7 @@ test_object("journals")
 success_msg("Good job! Head over to the next exercise")
 ```
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:45a2c54097a8b6d4e34111c3c09b9e422ce3bd1a
 ## Analyzing Results
 
 Conduct a search of journals with `diabetes` in the abstract and find the subset of matches that are likely to focus on type 2 diabetes.
@@ -169,7 +169,7 @@ test_object("type2")
 success_msg("Good job! Head over to the next exercise")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:99b7e607fdb72718e8dccc8ed1ef854684f5485a
 
 ## Identifying Dataset Format
 
@@ -196,7 +196,7 @@ test_mc(correct = 1, feedback_msgs = c(msg1, msg2))
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:964f5b71241df483c72f36f5d2be9b46bcecf3dd
 ## Creating Long Format
 
 Use the `study`, `trt`, and `event` variables in the workshape and put them into a data.frame in long format.
@@ -235,7 +235,7 @@ success_msg("Good job! Head over to the next exercise")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:7b83fe983c36736a6f1e3ae813975ab0479dccb6
 ## Creating Wide Format
 
 Convert the long data.frame created in the previous exercise into wide format using the `reshape` function.
@@ -274,7 +274,7 @@ success_msg("Good job! Head over to the next exercise")
 
 
 
---- type:NormalExercise lang:r  xp:100 skills:5
+--- type:NormalExercise lang:r  xp:100 skills:5 key:5ebb83dc172e1e181c19d3fdabf9002178288b65
 ## Deriving Variables in Wide Format
 
 Create a new variable for the `wide_meta_data` that is the difference in the events between treatment groups.
