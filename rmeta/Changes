@@ -1,0 +1,50 @@
+2.16 fix to cummeta.summaries for NULL names (from BDR)
+
+2.15 fix to MH relative risk variance, from Ted Lystig
+
+     forestplot() now allows the box size to be controlled explicitly
+
+2.14 xticks= argument to forestplot()
+     update format of saved data for R 2.4.0
+
+2.13 Add forestplot() for more complicated grid-based plots
+
+2.12 meta.MH for relative risks was wrong when exposed and unexposed 
+      groups were very different in size
+
+2.11 codoc changes.
+
+2.10 meta.MH was returning the trial-specific odds-ratio standard
+     errors, not relative risk standard errors.
+
+2.9  Allow factors as plot labels.
+
+2.8  Coerce data to double precision to avoid integer overflows.
+
+2.7  add more options to meta.colors.  
+     don't draw the zero line over the labels.
+
+2.6  Change meta.cum to cummeta, add cummeta.summaries, 
+     Change x-axis tick calculation for log scales
+
+2.5  Random effects meta-analyses weren't actually using the DerSimonian &
+     Laird estimator but a different moment estimator.
+     <NBarrowman@exchange.cheo.on.ca>
+
+     Now uses the options() default for na.action
+
+     Colours can be specified as a vector, which will be recycled.
+
+2.4-1 bug in meta.cum (ripley@stats.ox.ac.uk)
+
+2.4  Cumulative meta-analyses, changed n-1 to n in formula for tau in
+     meta.DSL, allowed relative risk in addition to odds ratio.
+
+2.3  CMD check fixes (thanks, Kurt)
+
+2.1  Better color handling. 
+     Funnel plots
+     meta-analysis of non-binary data
+
+2.0  User-specified confidence level (mostly from Ko-Kang Wang)
+     Colors.
