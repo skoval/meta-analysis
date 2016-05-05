@@ -2,7 +2,7 @@
 title       : Advanced Topics 1
 description : Exercises to accompany Part 7.1 - 7.2 of `Meta-Analysis with R'
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:70d4b25f9d0d92b006a1b39964ecbc38065ff7a2
 
 ## Defining Meta-Regression
 
@@ -28,7 +28,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:56b5871781a0c1ba0a4a587153493ff3cd0b9d74
 ## Purpose of Meta-Analysis
 
 Which of the following is not a reason to perfom meta-regression?
@@ -55,7 +55,7 @@ test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3))
 
 
 
---- type:NormalExercise lang:r  xp:150 skills:1
+--- type:NormalExercise lang:r  xp:150 skills:1 key:08ac2e2c61fcfa8854b2a7a0f05c2363100aae31
 ## Conducting a Meta-Regression
 
 Fit a meta-regression model for the risk ratio outcome of the BCG vaccine trials.
@@ -92,7 +92,7 @@ test_object("mreg")
 success_msg("Great job! You are really mastering this.")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:a5f9d6f204f8aa24bbb444087bea7cdc77f15ee7
 ## Interpreting the Meta-Regression
 
 What is the value of the intercept on the RR scale and what does it represent? (`mreg` is available in the workspace)
@@ -126,7 +126,7 @@ msg3 <- "Correct. This is the risk ratio on the right scale and reference group.
 test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:c745d05b04be285bbac78b2d48841de840b3b7c2
 ## Transforming Covariates in a Meta-Regression
 
 The previous exercise showed that the interpretation of the intercept represents an impossible study. Fit a new version that makes a more meaningful intercept term.
@@ -164,7 +164,7 @@ success_msg("That's fantastic! You are getting to expert level.")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:f00694060c753d9562ef55d0fc3efb0a5d375480
 ## Evaluating Improvement in Heterogeneity
 
 Look at the significance of the moderator effects and determine whether the inclusion of the effects has improved the heterogeneity level.
@@ -212,7 +212,7 @@ success_msg("Correct. You have mastered the review of meta-regression!")
 
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:12d2924dfa5733cb5ddf47b79d9dc67ee9b9e5c8
 
 ## Types of Missing Data
 
@@ -239,7 +239,7 @@ test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3))
 
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:71ab260a9e2d8792b668da2823da267743baf72b
 
 ## Sensitivity for Missing Data
 
@@ -263,7 +263,7 @@ msg3 <- "No. This is a specific type of missing data comparison but not the gene
 test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:f977bc3eb67a9d9b0a3e70e9e3e88def70a90f84
 ## Conducting a Sensitivity Analysis
 
 Conduct an assessment of the possible bias due to missing data. This exercise will make use of the Ishak 2007 study which includes 24 studies of deep brain stimulation and its effectiveness on the motor skills of Parkinson's patients.
@@ -362,7 +362,7 @@ success_msg("Fantastic. You just performed a sensitivity test for partially miss
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:dbf6a8d74d488e73be08327afc27604275ef2565
 ## Imputing Missing Variance
 
 In the following, some studies of the `data.ishak2007` control group are missing. Given the variance of the control groups `s2` and the control group sample size `n` perform a single imputation for each missing variance.
