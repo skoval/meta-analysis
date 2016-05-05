@@ -2,7 +2,7 @@
 title       : Heterogeneity and Bias
 description : Exercises to accompany Part 5 of `Meta-Analysis with R'
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:cbd6c0b83f521fc63730871135b0d9181cd57e8b
 
 ## Apples and Oranges
 
@@ -26,7 +26,7 @@ msg3 <- "You got it. Combining very different studies is like mixing apples and 
 test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:697caf779706ebd972e64ad2c1d86cd6d549d05f
 
 ## Definition of Heterogeneity
 
@@ -51,7 +51,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:8b2659a984fe58f408b32b9dea51dd639a653305
 ## Q Statistic
 
 
@@ -93,7 +93,7 @@ success_msg("Great job! You mastered the Q statistic.")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:0ec6e3bbc607a529ba33e7dd9a4d9cb592c053db
 ## Q Test
 
 Use the `Q` statistic for the `dat.bcg` trial to test for evidence of heterogeneity.
@@ -140,7 +140,7 @@ success_msg("Excellent. You are an expert at the Q test!")
 
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:809d22bfb9cd1898911fea4fdf10dc86329b905a
 ## Evaluating Q with `metafor`
 
 Perform the Q test for the `dat.bcg` trial using the `rma` function.
@@ -181,7 +181,7 @@ success_msg("Great job! You are really getting the hang of this.")
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:bb748baf26393a06e27331e7e729a93cf9156c68
 ## Heterogeneity Indices
 
 Calculate the $I^2$ for the `dat.bcg` trial.
@@ -221,7 +221,7 @@ success_msg("Wow! Great work.")
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:5c109ee031f24782b19c2314c335e6c8dfd8092f
 ## Heterogeneity Indices with `rma`
 
 Calculate the $I^2$ for the `dat.bcg` trial using the `rma` function.
@@ -258,7 +258,7 @@ test_object("I2")
 success_msg("Great job. You are almost there.")
 ```
 
---- type:NormalExercise lang:r  xp:300 skills:5
+--- type:NormalExercise lang:r  xp:300 skills:5 key:294008ef1fa4c7d18f866391fff9e8a192ed2d5c
 ## Confidence Intervals for $I^2$
 
 Does the log-RR or log-OR measure have greater heterogeneity for the `dat.bcg` trial?
@@ -304,7 +304,7 @@ test_object("I2.rr")
 success_msg("You should be so pleased! You are all done with exercises for Lecture 5.1!")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:782580d5ea1e3bd1bdf8ea631c44c11ba112300e
 ## Concern with Bias
 
 Why is protecting against bias in a meta-analysis important?
@@ -328,7 +328,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:f014c1069ada45c09858c8965fe64c266205af67
 
 ## Types of Bias
 
@@ -354,7 +354,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:5
+--- type:NormalExercise lang:r  xp:100 skills:5 key:93b7cf08ec6c94cb37361babb924ab7c28c63cdd
 ## Making a Funnel Plot
 
 Obtain a funnel plot for the log-OR effects of the `dat.bcg` trial.
@@ -397,7 +397,7 @@ success_msg("You should be thrilled! You made a funnel plot.")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:5
+--- type:NormalExercise lang:r  xp:100 skills:5 key:b6e0efb2352d15a9320c5fa69d7a0f5b793d0aca
 ## Trim-And-Fill
 
 Use the trim-and-fill method to estimate the number of missing studies due to publication bias.
@@ -438,7 +438,7 @@ success_msg("Great job. You are mastering these topics.")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:5
+--- type:NormalExercise lang:r  xp:100 skills:5 key:e4571cd44ef854fb120f6289fb0820e5c67e038d
 ## Rank Test
 
 The `metafor` package includes a function `ranktest` that tests for asymmetry in the funnel plot. Determine the results of this test for the `dat.bcg` meta-analysis.
@@ -479,7 +479,7 @@ success_msg("Excellent. That's exactly right!")
 
 
 
---- type:NormalExercise lang:r  xp:100 skills:5
+--- type:NormalExercise lang:r  xp:100 skills:5 key:54c3a8e6291886d275321f644c008dc3683a9b9f
 ## Fail-Safe Number
 
 What is the fail-safe number for the `dat.bcg` meta-analysis? Is your finding consistent with the funnel plot analysis?
@@ -520,7 +520,7 @@ success_msg("Excellent. You really have this down!")
 ```
 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:bcae6fcac3d5e93d1229666ff80dd75baf550e9e
 
 ## Interpreting Publication Bias Tools
 
