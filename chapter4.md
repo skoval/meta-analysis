@@ -29,7 +29,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 
 ## Fixed Effects Model
 
-What is not an assumption of the fixed effects model?
+What is _not_ an assumption of the fixed effects model?
 
 *** =instructions
 - The summary effect is normally distributed.
@@ -138,7 +138,7 @@ success_msg("That's right! You are ready to continue.")
 
 
 --- type:NormalExercise lang:r  xp:200 skills:1
-## Fitting the Fixed Effect Model
+## Fitting the Fixed Effects Model
 
 Obtain the fixed effects summary for the `catheter` meta-analysis using the log risk ratio measure of effect.
 
@@ -233,7 +233,7 @@ Which statement about the random effects model for meta-analysis is correct?
 - It assumes the variance of the study effects is random.
 
 *** =hint
-Recall that the random effects models allows variation in study effects.
+Recall that the random effects model allows variation in study effects.
 
 *** =sct
 ```{r}

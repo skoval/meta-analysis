@@ -59,7 +59,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 In this exercise, you will perform a pooled meta-analysis and examine between-study heterogeneity.
 
 *** =instructions
-- The dataset `normand1999` contained pooled data for 9 studies.
+- The dataset `normand1999` contains pooled data for 9 studies.
 - The outcome is the length of stay (in days) among hospital patients.
 - The purpose of the meta-analysis is to obtain an overall summary of the typical length of stay.
 - Use a Poisson regression and determine the significance of between-study effects.
@@ -285,7 +285,7 @@ success_msg("That's great! You are really mastering this.")
 --- type:NormalExercise lang:r  xp:100 skills:1
 ## Small Study Effects
 
-In this problem, we look at possible small study effects for among 48 studies looking at the effectiveness of school-based writing-to-learn interventions on academic achievement.
+In this problem, we look at possible small study effects among 48 studies looking at the effectiveness of school-based writing-to-learn interventions on academic achievement.
 
 
 
@@ -359,13 +359,13 @@ success_msg("Great job! You are mastering this.")
 --- type:NormalExercise lang:r  xp:200 skills:1
 ## Influence Diagnostics
 
-Using the `dat.bangertdrowns2004` study, conduct a leave-one-out sensitivity analysis and find the range of the effect sizes for the mean difference. Does this range concern about the robustness of the analysis?
+Using the `dat.bangertdrowns2004` study, conduct a leave-one-out sensitivity analysis and find the range of the effect sizes for the mean difference. Does this raise concern about the robustness of the analysis?
 
 
 *** =instructions
 - Use the mean differences in `yi` and variances `vi`
 - Fit a DerSimonian-Laird model with `rma`
-- Use the `leave1out` method.
+- Use the `leave1out` method
 - Store the range as `effect.range`
 
 *** =hint
@@ -412,6 +412,7 @@ Use the function `choose`.
 *** =pre_exercise_code
 ```{r}
 library(netmeta)
+
 data(parkinson)
 
 # Transform data from arm-based format to contrast-based format
@@ -522,6 +523,6 @@ forest(fit, ref = "1")
 ```{r}
 test_error()
 test_object("fit")
-success_msg("You should be really pleased! You mastered the advanced coursework!)
+success_msg("You should be really pleased! You mastered the advanced coursework!")
 ```
 

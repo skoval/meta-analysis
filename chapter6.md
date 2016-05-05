@@ -380,7 +380,7 @@ meta::forest(fit)
 ```{r}
 test_error()
 
-test_function("forest", args = "x ",
+test_function("meta::forest", args = "x ",
               not_called_msg = "You should use the forest function.")
 
 success_msg("Great job. You're all done.")

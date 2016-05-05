@@ -65,7 +65,7 @@ A dataset with the p-values for 10 studies in a meta-analysis is included in the
 - Create the object `positive' and assign it the number of positive studies.
 
 *** =hint
-Use `sum' or `table' to count the positive studies.
+Use `sum` or `table` to count the positive studies.
 
 *** =pre_exercise_code
 ```{r}
@@ -371,7 +371,7 @@ test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3))
 --- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:ca7104d708e3098c797eafab9a471873b84a434e
 ## When a Meta-Analysis is Appropriate
 
-Which of the following would be a reason you might not perform a meta-analysis as part of a systematic review?
+Which of the following would be a reason you might _not_ perform a meta-analysis as part of a systematic review?
 
 *** =instructions
 
