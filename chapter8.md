@@ -2,7 +2,7 @@
 title       : Advanced Topics 2
 description : Exercises to accompany Part 7.3 - 7.5 of `Meta-Analysis with R'
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:f0da4bb0a4
 
 ## Individual Patient Data Meta-Analysis
 
@@ -27,7 +27,7 @@ msg3 <- "No. This is not a description of a meta-analysis."
 test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:dca5cb94fc
 
 ## Benefits of IPD Meta-Analysis
 
@@ -53,7 +53,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:NormalExercise lang:r  xp:150 skills:1
+--- type:NormalExercise lang:r  xp:150 skills:1 key:95e3d1441c
 ## Performing One-Step Meta-Analysis
 
 In this exercise, you will perform a pooled meta-analysis and examine between-study heterogeneity.
@@ -104,7 +104,7 @@ success_msg("Great job. You have a good understanding of patient-data meta-analy
 
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:2a63465896
 ## Performing Two-Step Meta-Analysis
 
 Using the `normand1999` dataset, obtain the log-rate for each study and fit the DerSimonian-Laird meta-analysis.
@@ -160,7 +160,7 @@ test_function("rma", args = "method", not_called_msg = "You should use the rma f
 success_msg("Fantastic! You have mastered IPD meta-analysis.")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:766345cf79
 
 ## Rare Events
 
@@ -189,7 +189,7 @@ msg2 <- "Wrong.  There are ver few events for some groups."
 test_mc(correct = 1, feedback_msgs = c(msg1, msg2)) 
 ```
 
---- type:NormalExercise lang:r  xp:150 skills:1
+--- type:NormalExercise lang:r  xp:150 skills:1 key:d48c93d77f
 ## Peto Method
 
 Use the `metabin` function and Peto's method to perform a meta-analysis of odds ratios for the `dat.bcg` study. What does the analysis suggest about the effect of the BCG vaccine?
@@ -236,7 +236,7 @@ success_msg("Excellent! That was challenging, and you got it!")
 
 
 
---- type:NormalExercise lang:r  xp:150 skills:1
+--- type:NormalExercise lang:r  xp:150 skills:1 key:744b237f2a
 ## Mantel-Haenszel Method
 
 Use the `metabin` function and the Mantel-Haenszel method to perform a meta-analysis of odds ratios for the `dat.bcg` study. What do you find in this case?
@@ -282,7 +282,7 @@ success_msg("That's great! You are really mastering this.")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:6d2d540ac7
 ## Small Study Effects
 
 In this problem, we look at possible small study effects for among 48 studies looking at the effectiveness of school-based writing-to-learn interventions on academic achievement.
@@ -320,7 +320,7 @@ success_msg("That's right! You are ready for the next problem.")
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:a2e8080281
 ## Funnel Plot for Small Study Effects
 
 Using the `dat.bangertdrowns2004` study, plot the data in a way that will help visualize possible small study effects.
@@ -356,7 +356,7 @@ success_msg("Great job! You are mastering this.")
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:604810e556
 ## Influence Diagnostics
 
 Using the `dat.bangertdrowns2004` study, conduct a leave-one-out sensitivity analysis and find the range of the effect sizes for the mean difference. Does this range concern about the robustness of the analysis?
@@ -394,7 +394,7 @@ success_msg("Really well done! Excellent job.")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:3cc149928f
 ## Network Meta-Analysis
 
 The `parkinson` data set contains the mean lost work-time reduction in patients given dopamine agonists as adjunct therapy in Parkinson’s disease. Treatments are placebo, coded 1, and four active drugs coded 2 to 5. 
@@ -439,7 +439,7 @@ test_object("observed")
 success_msg("Great job! You are ready for the next question.")
 ```
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:e45e4fe980
 ## Network Graph
 
 Create a network graph with the `parkinson` data set.
@@ -481,7 +481,7 @@ test_function("netgraph", args = "x", not_called_msg = "You should use netgraph"
 success_msg("Fantastic! That was challenging, but you got it!")
 ```
 
---- type:NormalExercise lang:r  xp:250 skills:1
+--- type:NormalExercise lang:r  xp:250 skills:1 key:3cc149928f
 ## Network Meta-Analysis
 
 Fit a random effects network meta-analysis on the `parkinson` data set.
