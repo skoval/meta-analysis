@@ -2,7 +2,7 @@
 title       : Presenting Results
 description : Exercises to accompany Part 6 of `Meta-Analysis with R'
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:2593fa681e5a11e25b2838da971a334c43a466ad
 
 ## Reproducibility 
 
@@ -27,7 +27,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:c16aeb39e660a1d21a7f8d048f4ab091f99d931c
 ## Creating a Descriptive Table
 
 Create a data.frame with information for the summary table in a report using the `dat.bcg` study.
@@ -69,7 +69,7 @@ success_msg("Great job! That's exactly right.")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:94501452d0c66248f04564c62ad6dd9f3300057a
 ## Add Effect Sizes
 
 Add the odds ratio effect size to the data.frame.
@@ -113,7 +113,7 @@ test_object("output")
 success_msg("Fantastic work!")
 ```
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:236ff2234345bbc556a502d210fc7ce241ff2285
 ## Output to Markdown Format
 
 Create a markdown table of the output.
@@ -161,7 +161,7 @@ test_function("kable", args = "format",
 success_msg("Great! You are really mastering this.")
 ```
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:ac39364cc794abf5b1bd6dc047faf065f023663d
 ## Customizing the Ouput
 
 Modify the output to have only 1 significant digit.
@@ -209,7 +209,7 @@ test_function("kable", args = "digits",
 success_msg("Great! You are really mastering this.")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:d151fe74a51df95c8f20a73aaf229129c090116c
 
 ## Forest Plot
 
@@ -234,7 +234,7 @@ msg3 <- "Nope. The plot can show heterogeneity but that isn't its main purpose."
 test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:6499f57f9c37c307eb34ae3a5a3c5cd44fb8e0e5
 ## Create a Forest Plot
 
 Create a forest plot for the `dat.bcg` trial.
@@ -269,7 +269,7 @@ test_function("forest", not_called_msg = "You should use the forest function.")
 success_msg("Great! You are really demonstrating your understanding.")
 ```
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:421033ed1df35b4a9f6bf3abac617fd9b7baab9d
 ## Customize the Forest Plot
 
 Add the study names to your plot.
@@ -309,7 +309,7 @@ success_msg("Really excellent work!")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:8aa0c91ac04cdd496cd6d93f9e261d092548304f
 ## Transform the Scale
 
 Present the results on the odds ratio scale.
@@ -347,7 +347,7 @@ success_msg("That's fantastic. You are doing so well!")
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:485d0a091592bf368b8a18ef18588c124d1441ef
 ## Forest Plots with the `meta` Package
 
 Create the OR forest plot of the dat.bcg data using the `meta` package.

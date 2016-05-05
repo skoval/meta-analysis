@@ -2,7 +2,7 @@
 title       : Fixed Effects Model
 description : Exercises to accompany Part 4 for `Meta-Analysis with R'
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:a76756041c2b84f6baf9db8434f6f42f7748123d
 
 ## Precision 
 
@@ -25,7 +25,7 @@ msg3 <- "You got it! Precision is the reciprocal of the study variance."
 test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:71660230b2c94797b8304bd081c1aa31c8db3c01
 
 ## Fixed Effects Model
 
@@ -50,7 +50,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:7c9df71fdb875764f2536abe89f6b7f4ad25b07a
 ## Precision Weights
 
 Obtain the precision weights for the log-risk ratio in the `catheter` dataset.
@@ -93,7 +93,7 @@ success_msg("Great job! You are ready for the next exercise.")
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:541329a148136e730811da58fdc1118d88dfb141
 ## Weight Contribution
 
 Determine which study will contribute the most to the summary effect estimate?
@@ -137,8 +137,13 @@ success_msg("That's right! You are ready to continue.")
 ```
 
 
+<<<<<<< HEAD
 --- type:NormalExercise lang:r  xp:200 skills:1
 ## Fitting the Fixed Effects Model
+=======
+--- type:NormalExercise lang:r  xp:200 skills:1 key:db3185167238bb00fd8411f6070d7e0faf151fec
+## Fitting the Fixed Effect Model
+>>>>>>> 3a508c5957c099f03ce1ab459dea5a78f67b3fd4
 
 Obtain the fixed effects summary for the `catheter` meta-analysis using the log risk ratio measure of effect.
 
@@ -179,7 +184,7 @@ success_msg("Great! You are ready for the next exercise.")
 ```
 
 
---- type:NormalExercise lang:r  xp:300 skills:5
+--- type:NormalExercise lang:r  xp:300 skills:5 key:23dc621c35b87203b571c95c74a4ecab59b0e252
 ## Confidence Interval
 
 Obtain the 95% CI for the risk ratio effect in the `catheter` data. 
@@ -220,7 +225,7 @@ test_object("ci")
 success_msg("Great work! You are all done!")
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:26d3ad9b8748c3eb84ebdb57a4a935c75093541c
 
 ## Random Effects
 
@@ -244,7 +249,7 @@ msg3 <- "No. Variance parameters are not treated as random."
 test_mc(correct = 1, feedback_msgs = c(msg1, msg2, msg3)) 
 ```
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:5
+--- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:984ea53935a231ec024ef32fafa62df2d3f91d27
 
 ## Fixed Versus Random Effects Model
 
@@ -268,7 +273,7 @@ test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3))
 ```
 
 
---- type:NormalExercise lang:r  xp:100 skills:1
+--- type:NormalExercise lang:r  xp:100 skills:1 key:9acc7bf25f28498fed58fe335ce0378c9f19ae29
 ## Random Effects Model
 
 Fit the random effects model for the log-odds ratio in the `catheter` dataset.
@@ -311,7 +316,7 @@ success_msg("Great job! You are ready for the next exercise.")
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:40009ab474483e80554d002d18bd13d9bef544f8
 ## Compare the Fixed and Random Effects Models
 
 Contrast the result from the random effects model with the fixed effects model.
@@ -359,7 +364,7 @@ success_msg("Great job! You are mastering this.")
 ```
 
 
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:db2adf0d3145919eaab9f2612be241fb0126f878
 ## Compare the CI for the FE and RE Models
 
 Contrast the widths of the confidence intervals for the fixed and random effects models using the `catheter` meta-analysis. What do you observe?
@@ -408,7 +413,7 @@ success_msg("Great! You are really doing well.")
 ```
 
 
---- type:NormalExercise lang:r  xp:300 skills:5
+--- type:NormalExercise lang:r  xp:300 skills:5 key:671990bb1696ded711b95f58e495cd077d4b03e2
 ## Estimators of Between-Study Variance
 
 Obtain the estimate of $\tau^2$ for the RE model of the `catheter` data using the log-risk ratio measure of effect and three different estimator types.
