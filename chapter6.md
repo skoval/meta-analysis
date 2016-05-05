@@ -373,14 +373,14 @@ data(dat.bcg)
 ```{r}
 fit <- metabin(tpos, tneg + tpos, cpos, cneg + cpos, data = dat.bcg,
 	sm = "OR")
-meta::forest(fit)
+forest(fit)
 ```
 
 *** =sct
 ```{r}
 test_error()
 
-test_function("meta::forest", args = "x ",
+test_function("forest", args = "x ",
               not_called_msg = "You should use the forest function.")
 
 success_msg("Great job. You're all done.")
