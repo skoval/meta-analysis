@@ -138,7 +138,7 @@ success_msg("That's right! You are ready to continue.")
 
 
 <<<<<<< HEAD
---- type:NormalExercise lang:r  xp:200 skills:1
+--- type:NormalExercise lang:r  xp:200 skills:1 key:26736cbfe1
 ## Fitting the Fixed Effects Model
 =======
 --- type:NormalExercise lang:r  xp:200 skills:1 key:db3185167238bb00fd8411f6070d7e0faf151fec
