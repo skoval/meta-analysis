@@ -117,8 +117,8 @@ data(Olkin95)
 
 *** =solution
 ```{r}
-result <- escalc(ai = event.e, bi = event.c,
-	ci = n.e - event.e, di = n.c - event.c,
+result <- escalc(ai = event.e, bi = n.e - event.e,
+	ci = event.c, di = n.c - event.c,
 	n1 = n.e, n2 = n.c, 
 	measure = "OR", data = Olkin95
 )
@@ -150,8 +150,8 @@ Remember to transform the `OR` result from the log scale.
 library(metafor)
 library(meta)
 data(Olkin95)
-result <- escalc(ai = event.e, bi = event.c,
-	ci = n.e - event.e, di = n.c - event.c,
+result <- escalc(ai = event.e, bi = n.e - event.e,
+	ci = event.c, di = n.c - event.c,
 	n1 = n.e, n2 = n.c, 
 	measure = "OR", data = Olkin95
 )

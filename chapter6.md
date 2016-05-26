@@ -368,7 +368,6 @@ library(metafor)
 data(dat.bcg)
 ```
 
-
 *** =solution
 ```{r}
 fit <- metabin(tpos, tneg + tpos, cpos, cneg + cpos, data = dat.bcg,

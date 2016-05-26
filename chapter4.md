@@ -53,7 +53,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1, msg2, msg3))
 --- type:NormalExercise lang:r  xp:200 skills:1 key:7c9df71fdb875764f2536abe89f6b7f4ad25b07a
 ## Precision Weights
 
-Obtain the precision weights for the log-risk ratio in the `catheter` dataset.
+Obtain the precision weights for the log-risk ratio in the `catheter` dataset using the "colonization" outcome.
 
 
 *** =instructions
@@ -77,8 +77,8 @@ data(catheter)
 ```{r}
 catheter
 
-obj <- escalc(ai = col.trt, bi = col.ctrl,
-	ci = n.trt - col.trt, di = n.ctrl - col.ctrl,
+obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
+	ci = col.ctrl, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "RR"
 )
 
@@ -111,8 +111,8 @@ library(metafor)
 library(rmeta)
 data(catheter)
 
-obj <- escalc(ai = col.trt, bi = col.ctrl,
-	ci = n.trt - col.trt, di = n.ctrl - col.ctrl,
+obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
+	ci = col.ctrl, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "RR"
 )
 
@@ -137,13 +137,8 @@ success_msg("That's right! You are ready to continue.")
 ```
 
 
-<<<<<<< HEAD
 --- type:NormalExercise lang:r  xp:200 skills:1 key:26736cbfe1
 ## Fitting the Fixed Effects Model
-=======
---- type:NormalExercise lang:r  xp:200 skills:1 key:db3185167238bb00fd8411f6070d7e0faf151fec
-## Fitting the Fixed Effect Model
->>>>>>> 3a508c5957c099f03ce1ab459dea5a78f67b3fd4
 
 Obtain the fixed effects summary for the `catheter` meta-analysis using the log risk ratio measure of effect.
 
@@ -167,8 +162,8 @@ data(catheter)
 
 *** =solution
 ```{r}
-obj <- escalc(ai = col.trt, bi = col.ctrl,
-	ci = n.trt - col.trt, di = n.ctrl - col.ctrl,
+obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
+	ci = col.ctrl, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "RR"
 )
 
@@ -203,11 +198,10 @@ library(metafor)
 library(rmeta)
 data(catheter)
 
-obj <- escalc(ai = col.trt, bi = col.ctrl,
-	ci = n.trt - col.trt, di = n.ctrl - col.ctrl,
+obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
+	ci = col.ctrl, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "RR"
 )
-
 
 fit <- rma(yi = obj$yi, vi = obj$vi, method = "FE")
 ```
@@ -433,8 +427,8 @@ library(rmeta)
 library(metafor)
 data(catheter)
 
-obj <- escalc(ai = col.trt, bi = col.ctrl,
-	ci = n.trt - col.trt, di = n.ctrl - col.ctrl,
+obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
+	ci = col.ctrl, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "RR"
 )
 ```
