@@ -259,7 +259,7 @@ success_msg("Great job. You are almost there.")
 ```
 
 --- type:NormalExercise lang:r  xp:300 skills:5 key:294008ef1fa4c7d18f866391fff9e8a192ed2d5c
-## Confidence Intervals for $I^2$
+## Confidence Intervals for I2
 
 Does the log-RR or log-OR measure have greater heterogeneity for the `dat.bcg` trial?
 
@@ -285,6 +285,7 @@ data(dat.bcg)
 ```{r}
 fit.or <- rma(measure="OR", ai=tpos, bi=tneg, ci=cpos, di=cneg, 
 	data=dat.bcg, method = "DL")
+	
 fit.rr <- rma(measure="RR", ai=tpos, bi=tneg, ci=cpos, di=cneg, 
 	data=dat.bcg, method = "DL")	
 

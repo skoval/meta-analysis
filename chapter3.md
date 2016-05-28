@@ -98,7 +98,7 @@ success_msg("Excellent work! You are ready for the next exercise.")
 --- type:NormalExercise lang:r  xp:100 skills:1 key:c0efe88701ae6a7fdc7ee1c48970d1488acd7e89
 ## Using the `escalc` Function
 
-Calculate the log odds ratio between the events of the `e` and `c` groups of the `Olkin95` dataset. 
+Calculate the log odds ratio between the events of the `e` and `c` groups of the `Olkin95` dataset. Recall that in the 2x2 contingency table, position 'a' is used for the events in the treatment group and 'c' for the events in the control group.
 
 *** =instructions
 - Use the `escalc` function.
@@ -213,7 +213,7 @@ success_msg("Excellent work! You are ready for the next exercise.")
 --- type:NormalExercise lang:r  xp:300 skills:5 key:5fecf88a095e785ec5f4170e6bca93ef6a6f628e
 ## Comparing Effects
 
-Calculate the standardized mean difference for the previous problem and contrast it with the mean difference in a plot.
+Calculate the standardized mean difference for the previous problem and contrast it with the mean difference in a plot. Do both effect sizes appear to be highly correlated or not?
 
 
 *** =instructions

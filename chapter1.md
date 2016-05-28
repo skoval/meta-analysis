@@ -175,7 +175,7 @@ test_mc(correct = 2, feedback_msgs = c(msg1, msg2))
 --- type:MultipleChoiceExercise lang:r xp:50 skills:5 key:06306d067374c2a3d5f0191909736bf94f9560a9
 ## Streptokinase and Heart Attack
 
-What was the main point of the meta-analysis Lua and colleagues performed on the historical studies of streptokinase as a treatment for heart attack?
+What was the main point of the meta-analysis Lau and colleagues performed on the historical studies of streptokinase as a treatment for heart attack?
 
 
 *** =instructions

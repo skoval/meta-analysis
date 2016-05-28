@@ -70,6 +70,7 @@ Recall precision is the inverse variance.
 library(rmeta)
 library(metafor)
 data(catheter)
+catheter <- catheter[,1:5]
 ```
 
 
@@ -110,7 +111,7 @@ Look for the study with the greatest precision.
 library(metafor)
 library(rmeta)
 data(catheter)
-
+catheter <- catheter[,1:5]
 obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
 	ci = col.ctrl, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "RR"
@@ -157,6 +158,7 @@ The summary effect is stored as `b`.
 library(metafor)
 library(rmeta)
 data(catheter)
+catheter <- catheter[,1:5]
 ```
 
 
@@ -197,7 +199,7 @@ Remember to exponentiate!
 library(metafor)
 library(rmeta)
 data(catheter)
-
+catheter <- catheter[,1:5]
 obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
 	ci = col.ctrl, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "RR"
@@ -251,7 +253,7 @@ Which of the following is a true difference about the fixed and random effects m
 
 *** =instructions
 - The fixed effects model has a parameter $\tau^2$.
-- The models result in a different estimate for $\theta$.
+- The random effects model doesn't assume the within-study variance is known.
 - The random effects model has a wider confidence interval for $\hat{\theta}$.
 
 *** =hint
@@ -260,7 +262,7 @@ The random effects model introduces additional variation for the overall effect 
 *** =sct
 ```{r}
 msg1 <- "Try again. The FE model does not have between-study variance."
-msg2 <- "No. Both models can have the same summary effect."
+msg2 <- "No. Both models assume a known within-study variance."
 msg3 <- "That's right. The random effects model will generally have greater variance in its estimate because it assumes between-study variability."
 
 test_mc(correct = 3, feedback_msgs = c(msg1, msg2, msg3)) 
@@ -287,6 +289,7 @@ Use the method `DL`.
 library(rmeta)
 library(metafor)
 data(catheter)
+catheter <- catheter[,1:5]
 ```
 
 
@@ -294,8 +297,8 @@ data(catheter)
 ```{r}
 catheter
 
-obj <- escalc(ai = col.trt, bi = col.ctrl,
-	ci = n.trt - col.trt, di = n.ctrl - col.ctrl,
+obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
+	ci = col.ctrl, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "OR"
 )
 
@@ -330,8 +333,10 @@ library(rmeta)
 library(metafor)
 data(catheter)
 
-obj <- escalc(ai = col.trt, bi = col.ctrl,
-	ci = n.trt - col.trt, di = n.ctrl - col.ctrl,
+catheter <- catheter[,1:5]
+
+obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
+	ci = col.ctrl, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "OR"
 )
 
@@ -379,8 +384,10 @@ library(rmeta)
 library(metafor)
 data(catheter)
 
-obj <- escalc(ai = col.trt, bi = col.ctrl,
-	ci = n.trt - col.trt, di = n.ctrl - col.ctrl,
+catheter <- catheter[,1:5]
+
+obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
+	ci = col.ctrl, di = n.ctrl - col.ctrl,
 	data = catheter, measure = "OR"
 )
 
@@ -426,6 +433,8 @@ The methods are `SJ`, `REML`, and `ML`.
 library(rmeta)
 library(metafor)
 data(catheter)
+
+catheter <- catheter[,1:5]
 
 obj <- escalc(ai = col.trt, bi = n.trt - col.trt,
 	ci = col.ctrl, di = n.ctrl - col.ctrl,
