@@ -482,7 +482,7 @@ test_function("netgraph", args = "x", not_called_msg = "You should use netgraph"
 success_msg("Fantastic! That was challenging, but you got it!")
 ```
 
---- type:NormalExercise lang:r  xp:250 skills:1 key:3cc149928f
+--- type:NormalExercise lang:r  xp:250 skills:1 key:ce51a1d38d
 ## Network Meta-Analysis
 
 Fit a random effects network meta-analysis on the `parkinson` data set.
